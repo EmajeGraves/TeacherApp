@@ -10,11 +10,41 @@ using System.Windows.Forms;
 
 namespace CS401app
 {
-    public partial class HomeFormcs : Form
+    public partial class HomeForm : Form
     {
-        public HomeFormcs()
+        public HomeForm()
         {
             InitializeComponent();
+        }
+
+        private void announcementsBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notesBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void scheduleBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hoursBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modifyAccountBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rosterBTN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

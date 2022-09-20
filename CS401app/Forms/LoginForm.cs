@@ -61,7 +61,7 @@ namespace TeacherApp
                 }
 
                 homeForm.Show();
-                Close();
+                
             }
             else 
             {

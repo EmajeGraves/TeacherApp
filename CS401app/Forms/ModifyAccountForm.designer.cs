@@ -60,6 +60,7 @@
             this.switchToModifyModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.accountPNL.SuspendLayout();
             this.contactInfoGB.SuspendLayout();
             this.addressInfoGB.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             // accountPNL
             // 
+            this.accountPNL.Controls.Add(this.comboBox1);
             this.accountPNL.Controls.Add(this.userNameLBL);
             this.accountPNL.Controls.Add(this.lastNameLBL);
             this.accountPNL.Controls.Add(this.contactInfoGB);
@@ -319,14 +321,14 @@
             // saveChangesToolStripMenuItem
             // 
             this.saveChangesToolStripMenuItem.Name = "saveChangesToolStripMenuItem";
-            this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.saveChangesToolStripMenuItem.Text = "Save Changes";
             this.saveChangesToolStripMenuItem.Click += new System.EventHandler(this.saveChangesToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(224, 34);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // editToolStripMenuItem
@@ -363,6 +365,14 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(308, 507);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(337, 28);
+            this.comboBox1.TabIndex = 23;
             // 
             // ModifyAccountForm
             // 
@@ -421,6 +431,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TextBox stateTXT;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

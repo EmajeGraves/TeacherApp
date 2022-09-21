@@ -64,7 +64,7 @@ namespace TeacherApp
             //clearStudentDataFields();
             accountPNL.Enabled = false;
         }
-        /*
+        
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //if selected item, enable panel 
@@ -85,7 +85,7 @@ namespace TeacherApp
         private void updateModifyList()
         {
             //step 1 clear all items in list first
-            Items.Clear();
+            comboBox1.Items.Clear();
             comboBox1.Text = "";
 
 
@@ -109,6 +109,6 @@ namespace TeacherApp
         private void ModifyAccountForm_Load(object sender, EventArgs e)
         {
             updateModifyList();
-        } */
+        } 
     }
 }

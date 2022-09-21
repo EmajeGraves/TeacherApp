@@ -15,6 +15,7 @@ namespace TeacherApp
         //variables
         CreateAccountForm createAccountForm;
         HomeForm homeForm;
+
         public DatabaseMgrSQLite dbMgr;
         private DataTable dataTable = new DataTable();
     

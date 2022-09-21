@@ -12,6 +12,9 @@ namespace TeacherApp
 {
     public partial class HomeForm : Form
     {
+        AccountsTableForm accountsTableForm;
+        ModifyAccountForm modifyAccountForm;
+
         public HomeForm()
         {
             InitializeComponent();
@@ -39,12 +42,20 @@ namespace TeacherApp
 
         private void modifyAccountBTN_Click(object sender, EventArgs e)
         {
-
+            if ((null == modifyAccountForm || modifyAccountForm.IsDisposed))
+            {
+                modifyAccountForm = new ModifyAccountForm();
+            }
+            modifyAccountForm.Show();
         }
 
         private void rosterBTN_Click(object sender, EventArgs e)
         {
-
+            if ((null == accountsTableForm || accountsTableForm.IsDisposed))
+            {
+                accountsTableForm = new AccountsTableForm();
+            }
+            accountsTableForm.Show();
         }
     }
 }

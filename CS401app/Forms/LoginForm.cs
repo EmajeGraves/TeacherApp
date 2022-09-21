@@ -14,6 +14,8 @@ namespace TeacherApp
     {
         //variables
         CreateAccountForm createAccountForm;
+        HomeForm homeForm;
+
         public DatabaseMgrSQLite dbMgr;
         private DataTable dataTable = new DataTable();
     
@@ -41,10 +43,7 @@ namespace TeacherApp
             string username = userNameInput.Text.ToString();
             string password = userPasswordInput.Text.ToString();
 
-         
-
-
-
+        
             //step2 generate sql insert statement
             string sqlStr = "SELECT * From AccountTable WHERE userName = '" + username + "' AND userPassword = '" + password + "' ";
 
@@ -56,6 +55,14 @@ namespace TeacherApp
             if (rowsReturned == 1)
             {
                 MessageBox.Show("Logged In Successfully!! " + "Welcome " + username);
+                
+                if ((homeForm == null || homeForm.IsDisposed))
+                {
+                    homeForm = new HomeForm();
+                }
+
+                homeForm.Show();
+                
             }
             else 
             {

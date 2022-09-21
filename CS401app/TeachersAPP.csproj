@@ -65,46 +65,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountsTableForm.cs">
+    <Compile Include="Forms\AccountsTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountsTableForm.Designer.cs">
+    <Compile Include="Forms\AccountsTableForm.Designer.cs">
       <DependentUpon>AccountsTableForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateAccountForm.cs">
+    <Compile Include="Forms\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateAccountForm.Designer.cs">
+    <Compile Include="Forms\CreateAccountForm.Designer.cs">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseMgrSQLite.cs" />
-    <Compile Include="GlobalData.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Databases\DatabaseMgrSQLite.cs" />
+    <Compile Include="Databases\GlobalData.cs" />
+    <Compile Include="Forms\HomeFormcs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.designer.cs">
+    <Compile Include="Forms\HomeFormcs.Designer.cs">
+      <DependentUpon>HomeFormcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifyAccountForm.cs">
+    <Compile Include="Forms\ModifyAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifyAccountForm.Designer.cs">
+    <Compile Include="Forms\ModifyAccountForm.Designer.cs">
       <DependentUpon>ModifyAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RosterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RosterForm.Designer.cs">
+      <DependentUpon>RosterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AccountsTableForm.resx">
+    <EmbeddedResource Include="Forms\AccountsTableForm.resx">
       <DependentUpon>AccountsTableForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateAccountForm.resx">
+    <EmbeddedResource Include="Forms\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\HomeFormcs.resx">
+      <DependentUpon>HomeFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifyAccountForm.resx">
+    <EmbeddedResource Include="Forms\ModifyAccountForm.resx">
       <DependentUpon>ModifyAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RosterForm.resx">
+      <DependentUpon>RosterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

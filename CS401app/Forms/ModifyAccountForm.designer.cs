@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.accountPNL = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.userNameLBL = new System.Windows.Forms.Label();
             this.lastNameLBL = new System.Windows.Forms.Label();
             this.contactInfoGB = new System.Windows.Forms.GroupBox();
+            this.schoolEmailLBL = new System.Windows.Forms.Label();
+            this.schoolEmailTXT = new System.Windows.Forms.TextBox();
             this.phoneTXT = new System.Windows.Forms.TextBox();
             this.emailTXT = new System.Windows.Forms.TextBox();
             this.phoneLBL = new System.Windows.Forms.Label();
@@ -60,7 +63,6 @@
             this.switchToModifyModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.accountPNL.SuspendLayout();
             this.contactInfoGB.SuspendLayout();
             this.addressInfoGB.SuspendLayout();
@@ -83,8 +85,17 @@
             this.accountPNL.Location = new System.Drawing.Point(14, 79);
             this.accountPNL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accountPNL.Name = "accountPNL";
-            this.accountPNL.Size = new System.Drawing.Size(971, 559);
+            this.accountPNL.Size = new System.Drawing.Size(971, 586);
             this.accountPNL.TabIndex = 21;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(286, 555);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(337, 28);
+            this.comboBox1.TabIndex = 23;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // userNameLBL
             // 
@@ -108,6 +119,8 @@
             // 
             // contactInfoGB
             // 
+            this.contactInfoGB.Controls.Add(this.schoolEmailLBL);
+            this.contactInfoGB.Controls.Add(this.schoolEmailTXT);
             this.contactInfoGB.Controls.Add(this.phoneTXT);
             this.contactInfoGB.Controls.Add(this.emailTXT);
             this.contactInfoGB.Controls.Add(this.phoneLBL);
@@ -116,14 +129,30 @@
             this.contactInfoGB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.contactInfoGB.Name = "contactInfoGB";
             this.contactInfoGB.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.contactInfoGB.Size = new System.Drawing.Size(939, 126);
+            this.contactInfoGB.Size = new System.Drawing.Size(939, 172);
             this.contactInfoGB.TabIndex = 17;
             this.contactInfoGB.TabStop = false;
             this.contactInfoGB.Text = "Contact Info";
             // 
+            // schoolEmailLBL
+            // 
+            this.schoolEmailLBL.AutoSize = true;
+            this.schoolEmailLBL.Location = new System.Drawing.Point(25, 81);
+            this.schoolEmailLBL.Name = "schoolEmailLBL";
+            this.schoolEmailLBL.Size = new System.Drawing.Size(105, 20);
+            this.schoolEmailLBL.TabIndex = 5;
+            this.schoolEmailLBL.Text = "School Email:";
+            // 
+            // schoolEmailTXT
+            // 
+            this.schoolEmailTXT.Location = new System.Drawing.Point(134, 78);
+            this.schoolEmailTXT.Name = "schoolEmailTXT";
+            this.schoolEmailTXT.Size = new System.Drawing.Size(389, 26);
+            this.schoolEmailTXT.TabIndex = 4;
+            // 
             // phoneTXT
             // 
-            this.phoneTXT.Location = new System.Drawing.Point(133, 72);
+            this.phoneTXT.Location = new System.Drawing.Point(134, 129);
             this.phoneTXT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.phoneTXT.Name = "phoneTXT";
             this.phoneTXT.Size = new System.Drawing.Size(268, 26);
@@ -140,7 +169,7 @@
             // phoneLBL
             // 
             this.phoneLBL.AutoSize = true;
-            this.phoneLBL.Location = new System.Drawing.Point(66, 76);
+            this.phoneLBL.Location = new System.Drawing.Point(67, 129);
             this.phoneLBL.Name = "phoneLBL";
             this.phoneLBL.Size = new System.Drawing.Size(59, 20);
             this.phoneLBL.TabIndex = 1;
@@ -323,13 +352,14 @@
             this.saveChangesToolStripMenuItem.Name = "saveChangesToolStripMenuItem";
             this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.saveChangesToolStripMenuItem.Text = "Save Changes";
-            this.saveChangesToolStripMenuItem.Click += new System.EventHandler(this.saveChangesToolStripMenuItem_Click);
+            this.saveChangesToolStripMenuItem.Click += new System.EventHandler(this.saveChangesToolStripMenuItem_Click_1);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -345,12 +375,14 @@
             this.swtchToViewModeToolStripMenuItem.Name = "swtchToViewModeToolStripMenuItem";
             this.swtchToViewModeToolStripMenuItem.Size = new System.Drawing.Size(301, 34);
             this.swtchToViewModeToolStripMenuItem.Text = "Switch to View Mode";
+            this.swtchToViewModeToolStripMenuItem.Click += new System.EventHandler(this.swtchToViewModeToolStripMenuItem_Click);
             // 
             // switchToModifyModeToolStripMenuItem
             // 
             this.switchToModifyModeToolStripMenuItem.Name = "switchToModifyModeToolStripMenuItem";
             this.switchToModifyModeToolStripMenuItem.Size = new System.Drawing.Size(301, 34);
             this.switchToModifyModeToolStripMenuItem.Text = "Switch to Modify Mode";
+            this.switchToModifyModeToolStripMenuItem.Click += new System.EventHandler(this.switchToModifyModeToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -366,14 +398,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(308, 507);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(337, 28);
-            this.comboBox1.TabIndex = 23;
-            // 
             // ModifyAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -383,7 +407,7 @@
             this.Controls.Add(this.accountPNL);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ModifyAccountForm";
-            this.Text = "t status";
+            this.Text = "Modify Account";
             this.accountPNL.ResumeLayout(false);
             this.accountPNL.PerformLayout();
             this.contactInfoGB.ResumeLayout(false);
@@ -432,6 +456,8 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TextBox stateTXT;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label schoolEmailLBL;
+        private System.Windows.Forms.TextBox schoolEmailTXT;
     }
 }
 

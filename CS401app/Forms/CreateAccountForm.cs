@@ -14,7 +14,7 @@ namespace TeacherApp
     {
         // declaring variables
         public DatabaseMgrSQLite dataBaseMgr;
-        private DataTable adminDataTable = new DataTable();
+       
         public CreateAccountForm()
         {
             InitializeComponent();
@@ -68,9 +68,6 @@ namespace TeacherApp
             MessageBox.Show("About Clicked");
         }
 
-       
-            
-
         private void createBTN_Click_1(object sender, EventArgs e)
         {
             try
@@ -82,12 +79,15 @@ namespace TeacherApp
                 string lastName = lastNameTXT.Text;
                 string role = roleComboBox.Text;
                 string address = streetTXT.Text + " " + cityTXT.Text + " " + stateComboBX.Text + " " + zipCodeTXT.Text;
+                string city = cityTXT.Text;
+                string state = stateComboBX.Text;
+                string zip = zipCodeTXT.Text;
                 string email = emailTXT.Text;
                 string schoolEmail = schoolEmailTXT.Text;
                 string phone = phoneTXT.Text;
                 
                 // creting sqlite statement
-                string sqlStr = "INSERT INTO AccountTable(userID, userName, userPassword, firstName, lastName, schoolEmail, alternateEmail, address, phone, role) VALUES ( abs(random() % 5000),'" + userName + "','" + userPassword + "','" + firstName + "','" + lastName + "','" + schoolEmail + "','" + email + "','" + address + "','" + phone + "','" + role + "')";
+                string sqlStr = "INSERT INTO AccountTable(userID, userName, userPassword, firstName, lastName, schoolEmail, alternateEmail, address, city, state, zip, phone, role) VALUES ( abs(random() % 5000),'" + userName + "','" + userPassword + "','" + firstName + "','" + lastName + "','" + schoolEmail + "','" + email + "','" + address + "','" + city + "','" + state + "','" + zip + "','" + phone + "','" + role + "')";
 
                 // send data to data base
                 int rowsInserted = 0;
@@ -97,6 +97,7 @@ namespace TeacherApp
                 if (rowsInserted == 1)
                 {
                     MessageBox.Show("Account Created!");
+                    Close();
                 }
                 else
                 {

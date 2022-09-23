@@ -15,7 +15,7 @@ namespace TeacherApp
         //variables
         CreateAccountForm createAccountForm;
         HomeForm homeForm;
-
+        
         public DatabaseMgrSQLite dbMgr;
         private DataTable dataTable = new DataTable();
     
@@ -25,16 +25,14 @@ namespace TeacherApp
             dbMgr = new DatabaseMgrSQLite();
         }
 
-
         private void createNewLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if ((null == createAccountForm) || (createAccountForm.IsDisposed))
-                {
+            {
                     createAccountForm = new CreateAccountForm();
-                }
-                // show account form
-                createAccountForm.Show();
-         
+            }
+            // show account form
+            createAccountForm.Show();
         }
 
         private void LoginBTN_Click_1(object sender, EventArgs e)
@@ -43,7 +41,6 @@ namespace TeacherApp
             string username = userNameInput.Text.ToString();
             string password = userPasswordInput.Text.ToString();
 
-        
             //step2 generate sql insert statement
             string sqlStr = "SELECT * From AccountTable WHERE userName = '" + username + "' AND userPassword = '" + password + "' ";
 
@@ -54,13 +51,17 @@ namespace TeacherApp
             //if rowsReturned == 1, then we found the user
             if (rowsReturned == 1)
             {
+                foreach (DataRow dr in dataTable.Rows) // looping though rows
+                {
+                      User.userId = Convert.ToInt32(dr["userID"]);
+                }
                 MessageBox.Show("Logged In Successfully!! " + "Welcome " + username);
                 
                 if ((homeForm == null || homeForm.IsDisposed))
                 {
                     homeForm = new HomeForm();
                 }
-
+              
                 homeForm.Show();
                 
             }

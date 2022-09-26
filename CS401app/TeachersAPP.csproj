@@ -79,6 +79,12 @@
     </Compile>
     <Compile Include="Databases\DatabaseMgrSQLite.cs" />
     <Compile Include="Databases\GlobalData.cs" />
+    <Compile Include="Forms\NotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NotesForm.Designer.cs">
+      <DependentUpon>NotesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HomeFormcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModifyAccountForm.resx">
       <DependentUpon>ModifyAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NotesForm.resx">
+      <DependentUpon>NotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RosterForm.resx">
       <DependentUpon>RosterForm.cs</DependentUpon>

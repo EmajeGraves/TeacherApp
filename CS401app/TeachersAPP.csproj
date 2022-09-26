@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C06201DB-EC30-4E52-9F1C-274352BFC037}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CS401app</RootNamespace>
-    <AssemblyName>CS401app</AssemblyName>
+    <RootNamespace>TeacherApp</RootNamespace>
+    <AssemblyName>TeacherApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -79,6 +79,12 @@
     </Compile>
     <Compile Include="Databases\DatabaseMgrSQLite.cs" />
     <Compile Include="Databases\GlobalData.cs" />
+    <Compile Include="Forms\CreateNotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateNotesForm.Designer.cs">
+      <DependentUpon>CreateNotesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NotesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <EmbeddedResource Include="Forms\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateNotesForm.resx">
+      <DependentUpon>CreateNotesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeFormcs.resx">
       <DependentUpon>HomeFormcs.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +150,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Databases\database.db" />
     <None Include="Databases\database.sqbpro" />

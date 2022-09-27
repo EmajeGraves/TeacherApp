@@ -62,7 +62,7 @@ namespace TeacherApp
                     homeForm = new HomeForm();
                 }
               
-                homeForm.Show();
+                homeForm.ShowDialog();
                 
             }
             else 

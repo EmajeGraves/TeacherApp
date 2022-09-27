@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.CreateNotesBTN = new System.Windows.Forms.Button();
             this.NotesTxtBox = new System.Windows.Forms.TextBox();
             this.notesComboBox = new System.Windows.Forms.ComboBox();
             this.SelectLBL = new System.Windows.Forms.Label();
@@ -41,13 +40,6 @@
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
-            // 
-            // CreateNotesBTN
-            // 
-            this.CreateNotesBTN.Location = new System.Drawing.Point(0, 0);
-            this.CreateNotesBTN.Name = "CreateNotesBTN";
-            this.CreateNotesBTN.Size = new System.Drawing.Size(75, 23);
-            this.CreateNotesBTN.TabIndex = 7;
             // 
             // NotesTxtBox
             // 
@@ -79,7 +71,7 @@
             // ModifyNoteBTN
             // 
             this.ModifyNoteBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModifyNoteBTN.Location = new System.Drawing.Point(434, 950);
+            this.ModifyNoteBTN.Location = new System.Drawing.Point(494, 950);
             this.ModifyNoteBTN.MinimumSize = new System.Drawing.Size(164, 76);
             this.ModifyNoteBTN.Name = "ModifyNoteBTN";
             this.ModifyNoteBTN.Size = new System.Drawing.Size(164, 76);
@@ -122,7 +114,6 @@
             this.Controls.Add(this.SelectLBL);
             this.Controls.Add(this.notesComboBox);
             this.Controls.Add(this.NotesTxtBox);
-            this.Controls.Add(this.CreateNotesBTN);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MinimumSize = new System.Drawing.Size(1578, 1187);
             this.Name = "NotesForm";
@@ -135,7 +126,6 @@
         #endregion
 
         private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.Button CreateNotesBTN;
         private System.Windows.Forms.TextBox NotesTxtBox;
         private System.Windows.Forms.ComboBox notesComboBox;
         private System.Windows.Forms.Label SelectLBL;

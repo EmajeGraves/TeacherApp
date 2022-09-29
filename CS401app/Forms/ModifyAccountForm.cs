@@ -60,7 +60,7 @@ namespace TeacherApp
                     "state = '" + state + "', " +
                     "zip = '" + zip + "', " +
                     "phone = '" + phone + "' " +
-                    "WHERE userID = '" + User.userId + "' ";
+                    "WHERE userID = '" + User.UserId + "' ";
 
                 // Run the update with the dbMgr and check results
                 int numRowsUpdated = 0;
@@ -153,7 +153,7 @@ namespace TeacherApp
             try
             {
                 //SQLite statement
-                string sqlStr = "SELECT * From AccountTable WHERE userID = '" + User.userId + "' ";
+                string sqlStr = "SELECT * From AccountTable WHERE userID = '" + User.UserId + "' ";
                 int rowsReturned = 0;
                 //Admin data table calling get function from dataBaseMGR
                 dataTable.Clear();

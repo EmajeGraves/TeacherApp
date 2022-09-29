@@ -53,7 +53,7 @@ namespace TeacherApp
             {
                 foreach (DataRow dr in dataTable.Rows) // looping though rows
                 {
-                      User.userId = Convert.ToInt32(dr["userID"]);
+                      User.UserId = Convert.ToInt32(dr["userID"]);
                 }
                 MessageBox.Show("Logged In Successfully!! " + "Welcome " + username);
                 

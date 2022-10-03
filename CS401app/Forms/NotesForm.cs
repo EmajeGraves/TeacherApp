@@ -13,10 +13,15 @@ namespace TeacherApp
     public partial class NotesForm : Form
     {
         CreateNotesForm CreateNotesForm;
+        DatabaseMgrSQLite dbMgrSQLite;
+        private DataTable notesDataTable = new DataTable();
         
         public NotesForm()
         {
             InitializeComponent();
+           
+            dbMgrSQLite = new DatabaseMgrSQLite();
+            
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -25,6 +30,7 @@ namespace TeacherApp
             {
                 CreateNotesForm = new CreateNotesForm();
             }
+            notesComboBox.Enabled = false;
             CreateNotesForm.ShowDialog();
         }
 
@@ -46,6 +52,42 @@ namespace TeacherApp
         private void SaveNoteBTN_Click(object sender, EventArgs e)
         {
 
+        }
+        public  void PopulateNotesComboBoxData() 
+        {
+            try
+            {
+                
+                //SQLite statement
+                string sqlStr = "SELECT * FROM Notes WHERE userID = '" + User.UserId + "' ";
+                int rowsReturned = 0;
+                //Admin data table calling get function from dataBaseMGR
+                notesDataTable.Clear();
+                notesDataTable = dbMgrSQLite.getData(sqlStr, out rowsReturned);
+                if (rowsReturned > 0)
+                {
+                    foreach (DataRow dr in notesDataTable.Rows) // looping though rows
+                    {
+                      
+
+                        string notesName = dr["noteName"].ToString();
+                        notesComboBox.Items.Add(notesName);
+                       
+                    }
+                }
+            }
+            catch (Exception)
+            { 
+                throw;
+            }
+        }
+
+        private void viewBTN_Click(object sender, EventArgs e)
+        {
+            notesComboBox.Enabled = true;
+            notesComboBox.Items.Clear();
+
+            PopulateNotesComboBoxData();
         }
     }
 }

@@ -35,6 +35,7 @@
             this.ModifyNoteBTN = new System.Windows.Forms.Button();
             this.SaveNoteBTN = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.viewBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // printDialog1
@@ -51,6 +52,7 @@
             // 
             // notesComboBox
             // 
+            this.notesComboBox.Enabled = false;
             this.notesComboBox.FormattingEnabled = true;
             this.notesComboBox.Location = new System.Drawing.Point(578, 60);
             this.notesComboBox.Name = "notesComboBox";
@@ -95,7 +97,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(883, 60);
+            this.linkLabel1.Location = new System.Drawing.Point(662, 9);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(115, 25);
             this.linkLabel1.TabIndex = 6;
@@ -103,11 +105,22 @@
             this.linkLabel1.Text = "Create New";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // viewBTN
+            // 
+            this.viewBTN.Location = new System.Drawing.Point(878, 59);
+            this.viewBTN.Name = "viewBTN";
+            this.viewBTN.Size = new System.Drawing.Size(75, 29);
+            this.viewBTN.TabIndex = 7;
+            this.viewBTN.Text = "View";
+            this.viewBTN.UseVisualStyleBackColor = true;
+            this.viewBTN.Click += new System.EventHandler(this.viewBTN_Click);
+            // 
             // NotesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1556, 1131);
+            this.Controls.Add(this.viewBTN);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.SaveNoteBTN);
             this.Controls.Add(this.ModifyNoteBTN);
@@ -132,5 +145,6 @@
         private System.Windows.Forms.Button ModifyNoteBTN;
         private System.Windows.Forms.Button SaveNoteBTN;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button viewBTN;
     }
 }

@@ -23,69 +23,13 @@ namespace TeacherApp
             InitializeComponent();
           
             dbMgr = new DatabaseMgrSQLite();
-            accountPNL.Enabled = false;
-
+            
             populateTextBoxes();
         }
 
-        private void saveChangesToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
+        
 
-            try
-            {
-                // read info from screen
-                string username = userNameTXT.Text.ToString();
-                string userPassword = passwordTXT.Text.ToString();
-                string firstName = firstNameTXT.Text.ToString();
-                string lastName = lastNameTXT.Text.ToString();
-                string address = addressTXT.Text.ToString();
-                string city = cityTXT.Text.ToString();
-
-                string state = stateTXT.Text.ToString();
-                string zip = zipTXT.Text.ToString();
-                string email = emailTXT.Text.ToString();
-                string schoolEmail = schoolEmailTXT.Text.ToString();
-                string phone = phoneTXT.Text;
-
-                // generate query string
-                string sqlstr = "UPDATE AccountTable SET " +
-                    "username = '" + username + "', " +
-                    "userPassword = '" + userPassword + "', " +
-                    "firstName = '" + firstName + "', " +
-                    "lastName = '" + lastName + "', " +
-                    "schoolEmail = '" + schoolEmail + "', " +
-                    "alternateEmail = '" + email + "', " +
-                    "address = '" + address + "', " +
-                    "city = '" + city + "', " +
-                    "state = '" + state + "', " +
-                    "zip = '" + zip + "', " +
-                    "phone = '" + phone + "' " +
-                    "WHERE userID = '" + User.UserId + "' ";
-
-                // Run the update with the dbMgr and check results
-                int numRowsUpdated = 0;
-                numRowsUpdated = dbMgr.putData(sqlstr);
-
-                if (numRowsUpdated == 1)
-                {
-                    HomeForm homeform = new HomeForm();
-                    
-                    MessageBox.Show("User updated", "Modify User Status");
-                }
-                else
-                {
-                    MessageBox.Show("User NOT updated", "Modify User Status");
-
-                }
-                //updateModifyList(); syntax error
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+       /* private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
@@ -145,7 +89,7 @@ namespace TeacherApp
         {
             accountPNL.Enabled = false;
             saveChangesToolStripMenuItem.Enabled = true;
-        }
+        } */
 
         private void populateTextBoxes()
         {
@@ -184,6 +128,60 @@ namespace TeacherApp
             }
         }
 
-        
+        private void saveChangesBTN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // read info from screen
+                string username = userNameTXT.Text.ToString();
+                string userPassword = passwordTXT.Text.ToString();
+                string firstName = firstNameTXT.Text.ToString();
+                string lastName = lastNameTXT.Text.ToString();
+                string address = addressTXT.Text.ToString();
+                string city = cityTXT.Text.ToString();
+
+                string state = stateTXT.Text.ToString();
+                string zip = zipTXT.Text.ToString();
+                string email = emailTXT.Text.ToString();
+                string schoolEmail = schoolEmailTXT.Text.ToString();
+                string phone = phoneTXT.Text;
+
+                // generate query string
+                string sqlstr = "UPDATE AccountTable SET " +
+                    "username = '" + username + "', " +
+                    "userPassword = '" + userPassword + "', " +
+                    "firstName = '" + firstName + "', " +
+                    "lastName = '" + lastName + "', " +
+                    "schoolEmail = '" + schoolEmail + "', " +
+                    "alternateEmail = '" + email + "', " +
+                    "address = '" + address + "', " +
+                    "city = '" + city + "', " +
+                    "state = '" + state + "', " +
+                    "zip = '" + zip + "', " +
+                    "phone = '" + phone + "' " +
+                    "WHERE userID = '" + User.UserId + "' ";
+
+                // Run the update with the dbMgr and check results
+                int numRowsUpdated = 0;
+                numRowsUpdated = dbMgr.putData(sqlstr);
+
+                if (numRowsUpdated == 1)
+                {
+                    HomeForm homeform = new HomeForm();
+
+                    MessageBox.Show("User updated", "Modify User Status");
+                }
+                else
+                {
+                    MessageBox.Show("User NOT updated", "Modify User Status");
+
+                }
+                //updateModifyList(); syntax error
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

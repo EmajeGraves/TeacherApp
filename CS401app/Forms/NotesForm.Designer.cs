@@ -28,25 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.NotesTxtBox = new System.Windows.Forms.TextBox();
             this.notesComboBox = new System.Windows.Forms.ComboBox();
             this.SelectLBL = new System.Windows.Forms.Label();
             this.ModifyNoteBTN = new System.Windows.Forms.Button();
-            this.SaveNoteBTN = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.updateNoteBTN = new System.Windows.Forms.Button();
+            this.createNoteLinkLabel = new System.Windows.Forms.LinkLabel();
             this.viewBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
             // 
             // NotesTxtBox
             // 
             this.NotesTxtBox.Location = new System.Drawing.Point(119, 120);
             this.NotesTxtBox.Multiline = true;
             this.NotesTxtBox.Name = "NotesTxtBox";
+            this.NotesTxtBox.ReadOnly = true;
             this.NotesTxtBox.Size = new System.Drawing.Size(1335, 776);
             this.NotesTxtBox.TabIndex = 1;
             // 
@@ -82,28 +78,29 @@
             this.ModifyNoteBTN.UseVisualStyleBackColor = true;
             this.ModifyNoteBTN.Click += new System.EventHandler(this.ModifyNoteBTN_Click);
             // 
-            // SaveNoteBTN
+            // updateNoteBTN
             // 
-            this.SaveNoteBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveNoteBTN.Location = new System.Drawing.Point(808, 950);
-            this.SaveNoteBTN.Name = "SaveNoteBTN";
-            this.SaveNoteBTN.Size = new System.Drawing.Size(164, 76);
-            this.SaveNoteBTN.TabIndex = 5;
-            this.SaveNoteBTN.Text = "Save";
-            this.SaveNoteBTN.UseVisualStyleBackColor = true;
-            this.SaveNoteBTN.Click += new System.EventHandler(this.SaveNoteBTN_Click);
+            this.updateNoteBTN.Enabled = false;
+            this.updateNoteBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateNoteBTN.Location = new System.Drawing.Point(808, 950);
+            this.updateNoteBTN.Name = "updateNoteBTN";
+            this.updateNoteBTN.Size = new System.Drawing.Size(164, 76);
+            this.updateNoteBTN.TabIndex = 5;
+            this.updateNoteBTN.Text = "Update";
+            this.updateNoteBTN.UseVisualStyleBackColor = true;
+            this.updateNoteBTN.Click += new System.EventHandler(this.SaveNoteBTN_Click);
             // 
-            // linkLabel1
+            // createNoteLinkLabel
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(662, 9);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(115, 25);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Create New";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.createNoteLinkLabel.AutoSize = true;
+            this.createNoteLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createNoteLinkLabel.Location = new System.Drawing.Point(662, 9);
+            this.createNoteLinkLabel.Name = "createNoteLinkLabel";
+            this.createNoteLinkLabel.Size = new System.Drawing.Size(115, 25);
+            this.createNoteLinkLabel.TabIndex = 6;
+            this.createNoteLinkLabel.TabStop = true;
+            this.createNoteLinkLabel.Text = "Create New";
+            this.createNoteLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // viewBTN
             // 
@@ -121,8 +118,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1556, 1131);
             this.Controls.Add(this.viewBTN);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.SaveNoteBTN);
+            this.Controls.Add(this.createNoteLinkLabel);
+            this.Controls.Add(this.updateNoteBTN);
             this.Controls.Add(this.ModifyNoteBTN);
             this.Controls.Add(this.SelectLBL);
             this.Controls.Add(this.notesComboBox);
@@ -137,14 +134,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.TextBox NotesTxtBox;
         private System.Windows.Forms.ComboBox notesComboBox;
         private System.Windows.Forms.Label SelectLBL;
         private System.Windows.Forms.Button ModifyNoteBTN;
-        private System.Windows.Forms.Button SaveNoteBTN;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button updateNoteBTN;
+        private System.Windows.Forms.LinkLabel createNoteLinkLabel;
         private System.Windows.Forms.Button viewBTN;
     }
 }

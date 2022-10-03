@@ -27,7 +27,7 @@ namespace TeacherApp
                 string noteName = noteNameTxtBOX.Text;
               
                 // creting sqlite statement
-                string sqlStr = "INSERT INTO Notes(userID, noteName) VALUES ('" + User.userId + "','" + noteName +  "')";
+                string sqlStr = "INSERT INTO Notes(userID, noteName) VALUES ('" + User.UserId + "','" + noteName +  "')";
 
                 // send data to data base
                 int rowsInserted = 0;

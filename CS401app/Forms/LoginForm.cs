@@ -53,16 +53,16 @@ namespace TeacherApp
             {
                 foreach (DataRow dr in dataTable.Rows) // looping though rows
                 {
-                      User.userId = Convert.ToInt32(dr["userID"]);
+                      User.UserId = Convert.ToInt32(dr["userID"]);
                 }
-                MessageBox.Show("Logged In Successfully!! " + "Welcome " + username);
+                MessageBox.Show("Logged In Successfully!! " + "\nWelcome " + username);
                 
                 if ((homeForm == null || homeForm.IsDisposed))
                 {
                     homeForm = new HomeForm();
                 }
               
-                homeForm.Show();
+                homeForm.ShowDialog();
                 
             }
             else 

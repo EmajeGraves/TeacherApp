@@ -39,10 +39,7 @@ namespace TeacherApp
                     MessageBox.Show("Note Created!");
                     Close();
                 }
-                else
-                {
-                    MessageBox.Show("Error , Try Again");
-                }
+                 
             }
             catch (Exception ex)
             {

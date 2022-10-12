@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.accountPNL = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.userNameLBL = new System.Windows.Forms.Label();
             this.lastNameLBL = new System.Windows.Forms.Label();
             this.contactInfoGB = new System.Windows.Forms.GroupBox();
@@ -54,24 +53,14 @@
             this.firstNameLBL = new System.Windows.Forms.Label();
             this.lastNameTXT = new System.Windows.Forms.TextBox();
             this.firstNameTXT = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.swtchToViewModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.switchToModifyModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveChangesBTN = new System.Windows.Forms.Button();
             this.accountPNL.SuspendLayout();
             this.contactInfoGB.SuspendLayout();
             this.addressInfoGB.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // accountPNL
             // 
-            this.accountPNL.Controls.Add(this.comboBox1);
             this.accountPNL.Controls.Add(this.userNameLBL);
             this.accountPNL.Controls.Add(this.lastNameLBL);
             this.accountPNL.Controls.Add(this.contactInfoGB);
@@ -82,20 +71,11 @@
             this.accountPNL.Controls.Add(this.firstNameLBL);
             this.accountPNL.Controls.Add(this.lastNameTXT);
             this.accountPNL.Controls.Add(this.firstNameTXT);
-            this.accountPNL.Location = new System.Drawing.Point(14, 79);
+            this.accountPNL.Location = new System.Drawing.Point(14, 26);
             this.accountPNL.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accountPNL.Name = "accountPNL";
-            this.accountPNL.Size = new System.Drawing.Size(971, 586);
+            this.accountPNL.Size = new System.Drawing.Size(971, 541);
             this.accountPNL.TabIndex = 21;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(286, 555);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(337, 28);
-            this.comboBox1.TabIndex = 23;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // userNameLBL
             // 
@@ -264,7 +244,7 @@
             // 
             // addressTXT
             // 
-            this.addressTXT.Location = new System.Drawing.Point(133, 31);
+            this.addressTXT.Location = new System.Drawing.Point(132, 35);
             this.addressTXT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addressTXT.Name = "addressTXT";
             this.addressTXT.Size = new System.Drawing.Size(795, 26);
@@ -323,87 +303,22 @@
             this.firstNameTXT.Size = new System.Drawing.Size(314, 26);
             this.firstNameTXT.TabIndex = 14;
             // 
-            // menuStrip1
+            // saveChangesBTN
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(994, 33);
-            this.menuStrip1.TabIndex = 22;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveChangesToolStripMenuItem,
-            this.closeToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // saveChangesToolStripMenuItem
-            // 
-            this.saveChangesToolStripMenuItem.Name = "saveChangesToolStripMenuItem";
-            this.saveChangesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.saveChangesToolStripMenuItem.Text = "Save Changes";
-            this.saveChangesToolStripMenuItem.Click += new System.EventHandler(this.saveChangesToolStripMenuItem_Click_1);
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.swtchToViewModeToolStripMenuItem,
-            this.switchToModifyModeToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // swtchToViewModeToolStripMenuItem
-            // 
-            this.swtchToViewModeToolStripMenuItem.Name = "swtchToViewModeToolStripMenuItem";
-            this.swtchToViewModeToolStripMenuItem.Size = new System.Drawing.Size(301, 34);
-            this.swtchToViewModeToolStripMenuItem.Text = "Switch to View Mode";
-            this.swtchToViewModeToolStripMenuItem.Click += new System.EventHandler(this.swtchToViewModeToolStripMenuItem_Click);
-            // 
-            // switchToModifyModeToolStripMenuItem
-            // 
-            this.switchToModifyModeToolStripMenuItem.Name = "switchToModifyModeToolStripMenuItem";
-            this.switchToModifyModeToolStripMenuItem.Size = new System.Drawing.Size(301, 34);
-            this.switchToModifyModeToolStripMenuItem.Text = "Switch to Modify Mode";
-            this.switchToModifyModeToolStripMenuItem.Click += new System.EventHandler(this.switchToModifyModeToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.saveChangesBTN.Location = new System.Drawing.Point(427, 596);
+            this.saveChangesBTN.Name = "saveChangesBTN";
+            this.saveChangesBTN.Size = new System.Drawing.Size(128, 42);
+            this.saveChangesBTN.TabIndex = 22;
+            this.saveChangesBTN.Text = "Save Changes";
+            this.saveChangesBTN.UseVisualStyleBackColor = true;
+            this.saveChangesBTN.Click += new System.EventHandler(this.saveChangesBTN_Click);
             // 
             // ModifyAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 812);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(994, 650);
+            this.Controls.Add(this.saveChangesBTN);
             this.Controls.Add(this.accountPNL);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ModifyAccountForm";
@@ -414,10 +329,7 @@
             this.contactInfoGB.PerformLayout();
             this.addressInfoGB.ResumeLayout(false);
             this.addressInfoGB.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -445,19 +357,10 @@
         private System.Windows.Forms.Label firstNameLBL;
         private System.Windows.Forms.TextBox lastNameTXT;
         private System.Windows.Forms.TextBox firstNameTXT;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveChangesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem swtchToViewModeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem switchToModifyModeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TextBox stateTXT;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label schoolEmailLBL;
         private System.Windows.Forms.TextBox schoolEmailTXT;
+        private System.Windows.Forms.Button saveChangesBTN;
     }
 }
 

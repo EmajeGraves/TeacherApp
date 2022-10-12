@@ -16,6 +16,7 @@ namespace TeacherApp
         
         AccountsTableForm accountsTableForm;
         ModifyAccountForm modifyAccountForm;
+        NotesForm notesForm;
 
         public HomeForm()
         {
@@ -30,7 +31,11 @@ namespace TeacherApp
 
         private void notesBTN_Click(object sender, EventArgs e)
         {
-
+            if((null == notesForm || notesForm.IsDisposed))
+            {
+                notesForm = new NotesForm();
+            }
+            notesForm.Show();
         }
 
         private void scheduleBTN_Click(object sender, EventArgs e)

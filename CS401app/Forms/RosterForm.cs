@@ -25,7 +25,7 @@ namespace TeacherApp
         {
             try
             {
-                viewRosterBTN.Enabled = false;
+                //viewRosterBTN.Enabled = false;
                 ViewMode();
                 //SQLite statement
                 string sqlStr = "SELECT * FROM AccountTable";
@@ -64,5 +64,32 @@ namespace TeacherApp
             rosterTXT.ReadOnly = true;
 
         }
+
+        private void viewBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modifyBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

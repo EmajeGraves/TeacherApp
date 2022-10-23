@@ -17,6 +17,7 @@ namespace TeacherApp
         AccountsTableForm accountsTableForm;
         ModifyAccountForm modifyAccountForm;
         NotesForm notesForm;
+        RosterForm rosterForm;
 
         public HomeForm()
         {
@@ -60,11 +61,11 @@ namespace TeacherApp
 
         private void rosterBTN_Click(object sender, EventArgs e)
         {
-            if ((null == accountsTableForm || accountsTableForm.IsDisposed))
+            if ((null == rosterForm || rosterForm.IsDisposed))
             {
-                accountsTableForm = new AccountsTableForm();
+                rosterForm = new RosterForm();
             }
-            accountsTableForm.Show();
+            rosterForm.Show();
         }
 
         

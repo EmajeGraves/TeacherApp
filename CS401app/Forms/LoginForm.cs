@@ -56,7 +56,7 @@ namespace TeacherApp
                       User.UserId = Convert.ToInt32(dr["userID"]);
                       User.UserRole = dr["role"].ToString();
                 }
-                MessageBox.Show("Logged In Successfully!! " + "\nWelcome " + username);
+                MessageBox.Show("Logged In Successfully! " + "\nWelcome " + username);
                 
                 if ((homeForm == null || homeForm.IsDisposed))
                 {

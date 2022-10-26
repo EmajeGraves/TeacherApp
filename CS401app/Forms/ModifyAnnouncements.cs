@@ -8,27 +8,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Senior_Project
+namespace TeacherApp
+
 {
     public partial class ModifyAnnouncements : Form
     {
-        /*variables
+        //variables
         public DatabaseMgrSQLite dbMgr;
-        private DataTable dataTable = new DataTable();
-        public int userId = 0;
-        */
+        public DataTable dataTable = new DataTable();
+        //public int userId = 0;
+        
         public ModifyAnnouncements()
         {
             InitializeComponent();
-            /*
+            
             //create new database
             dbMgr = new DatabaseMgrSQLite();
 
-            //disable data panel and update button
-            ModifyStudentPanel.Enabled = false;
-            UpdateBtn.Enabled = false;
-            */
+            //populateTextBoxes();
         }
+
+        /*private void populateTextBoxes()
+        {
+
+            try
+            {
+                //SQLite statement
+                string sqlStr = "SELECT * From AnnouncementsTable WHERE userID = '" + User.UserId + "' ";
+                int rowsReturned = 0;
+                //Admin data table calling get function from dataBaseMGR
+                dataTable.Clear();
+                dataTable = dbMgr.getData(sqlStr, out rowsReturned);
+                if (rowsReturned > 0)
+                {
+                    foreach (DataRow dr in dataTable.Rows) // looping though rows
+                    {
+                        announcements.Text = dr["userName"].ToString();
+                        passwordTXT.Text = dr["userPassword"].ToString();
+                        firstNameTXT.Text = dr["firstName"].ToString();
+                        lastNameTXT.Text = dr["lastName"].ToString();
+                        addressTXT.Text = dr["address"].ToString();
+                        cityTXT.Text = dr["city"].ToString();
+                        stateTXT.Text = dr["state"].ToString();
+                        zipTXT.Text = dr["zip"].ToString();
+                        emailTXT.Text = dr["alternateEmail"].ToString();
+                        schoolEmailTXT.Text = dr["schoolEmail"].ToString();
+                        phoneTXT.Text = dr["phone"].ToString();
+
+                    }
+                }
+            }*/
 
         /*
         private void clearStudentDataFields()

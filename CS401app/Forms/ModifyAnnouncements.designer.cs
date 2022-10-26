@@ -1,5 +1,5 @@
 ﻿
-namespace Senior_Project
+namespace TeacherApp
 {
     partial class ModifyAnnouncements
     {

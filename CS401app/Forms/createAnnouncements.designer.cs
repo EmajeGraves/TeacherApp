@@ -1,5 +1,5 @@
 ﻿
-namespace Senior_Project
+namespace TeacherApp
 {
     partial class createAnnouncements
     {
@@ -34,6 +34,7 @@ namespace Senior_Project
             this.submitAnnouncementBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.subjectTXT = new System.Windows.Forms.TextBox();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // announcementLBL
@@ -57,7 +58,7 @@ namespace Senior_Project
             // 
             // submitAnnouncementBtn
             // 
-            this.submitAnnouncementBtn.Location = new System.Drawing.Point(353, 237);
+            this.submitAnnouncementBtn.Location = new System.Drawing.Point(290, 238);
             this.submitAnnouncementBtn.Name = "submitAnnouncementBtn";
             this.submitAnnouncementBtn.Size = new System.Drawing.Size(75, 23);
             this.submitAnnouncementBtn.TabIndex = 2;
@@ -81,11 +82,22 @@ namespace Senior_Project
             this.subjectTXT.Size = new System.Drawing.Size(245, 20);
             this.subjectTXT.TabIndex = 4;
             // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Location = new System.Drawing.Point(388, 238);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.TabIndex = 5;
+            this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
             // createAnnouncements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.subjectTXT);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.submitAnnouncementBtn);
@@ -93,6 +105,7 @@ namespace Senior_Project
             this.Controls.Add(this.announcementLBL);
             this.Name = "createAnnouncements";
             this.Text = "CreateAnnouncements";
+            this.Load += new System.EventHandler(this.createAnnouncements_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +118,7 @@ namespace Senior_Project
         private System.Windows.Forms.Button submitAnnouncementBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox subjectTXT;
+        private System.Windows.Forms.Button cancelBtn;
     }
 }
 

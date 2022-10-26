@@ -36,7 +36,7 @@ namespace TeacherApp
             {
                 notesForm = new NotesForm();
             }
-            notesForm.Show();
+            notesForm.ShowDialog();
         }
 
         private void scheduleBTN_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace TeacherApp
                 modifyAccountForm = new ModifyAccountForm();
             }
 
-            modifyAccountForm.Show();
+            modifyAccountForm.ShowDialog();
         }
 
         private void rosterBTN_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace TeacherApp
             {
                 rosterForm = new RosterForm();
             }
-            rosterForm.Show();
+            rosterForm.ShowDialog();
         }
 
         

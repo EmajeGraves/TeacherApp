@@ -8,6 +8,7 @@ namespace TeacherApp
 {
     class User
     {
-        public static int UserId { get; set; }   
+        public static int UserId { get; set; }  
+        public static string UserRole { get; set; } 
     }
 }

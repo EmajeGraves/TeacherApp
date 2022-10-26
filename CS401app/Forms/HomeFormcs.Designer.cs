@@ -37,7 +37,7 @@
             this.SuspendLayout();
             // 
             // notesBTN
-            // 
+            
             this.notesBTN.Location = new System.Drawing.Point(621, 240);
             this.notesBTN.MaximumSize = new System.Drawing.Size(235, 96);
             this.notesBTN.MinimumSize = new System.Drawing.Size(235, 96);
@@ -46,8 +46,8 @@
             this.notesBTN.TabIndex = 0;
             this.notesBTN.Text = "Notes";
             this.notesBTN.UseVisualStyleBackColor = true;
-            this.notesBTN.Click += new System.EventHandler(this.notesBTN_Click);
-            // 
+          //  this.notesBTN.Click += new System.EventHandler(this.notesBTN_Click);
+            
             // announcementsBTN
             // 
             this.announcementsBTN.Location = new System.Drawing.Point(225, 240);

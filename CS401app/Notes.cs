@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TeacherApp
 {
-    class User
+    class Notes
     {
-        public static int UserId { get; set; }   
+        public static int NoteID { get; set; }     
     }
 }

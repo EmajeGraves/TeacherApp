@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C06201DB-EC30-4E52-9F1C-274352BFC037}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TeacherApp</RootNamespace>
-    <AssemblyName>TeacherApp</AssemblyName>
+    <RootNamespace>CS401app</RootNamespace>
+    <AssemblyName>CS401app</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -71,6 +71,12 @@
     <Compile Include="Forms\AccountsTableForm.Designer.cs">
       <DependentUpon>AccountsTableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AnnouncementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnnouncementsForm.Designer.cs">
+      <DependentUpon>AnnouncementsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,17 +85,11 @@
     </Compile>
     <Compile Include="Databases\DatabaseMgrSQLite.cs" />
     <Compile Include="Databases\GlobalData.cs" />
-    <Compile Include="Forms\CreateNotesForm.cs">
+    <Compile Include="Forms\createAnnouncements.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateNotesForm.Designer.cs">
-      <DependentUpon>CreateNotesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\NotesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NotesForm.Designer.cs">
-      <DependentUpon>NotesForm.cs</DependentUpon>
+    <Compile Include="Forms\createAnnouncements.designer.cs">
+      <DependentUpon>createAnnouncements.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HomeFormcs.cs">
       <SubType>Form</SubType>
@@ -121,18 +121,18 @@
     <Compile Include="Forms\RosterForm.Designer.cs">
       <DependentUpon>RosterForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notes.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Forms\AccountsTableForm.resx">
       <DependentUpon>AccountsTableForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnnouncementsForm.resx">
+      <DependentUpon>AnnouncementsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateNotesForm.resx">
-      <DependentUpon>CreateNotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\createAnnouncements.resx">
       <DependentUpon>createAnnouncements.cs</DependentUpon>
@@ -145,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModifyAccountForm.resx">
       <DependentUpon>ModifyAccountForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NotesForm.resx">
-      <DependentUpon>NotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModifyAnnouncements.resx">
       <DependentUpon>ModifyAnnouncements.cs</DependentUpon>
@@ -163,10 +160,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Databases\database.db" />
     <None Include="Databases\database.sqbpro" />
+    <None Include="obj\Debug\CS401app.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -183,8 +182,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\" />
-    <Folder Include="obj\" />
+    <Folder Include="bin\Debug\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

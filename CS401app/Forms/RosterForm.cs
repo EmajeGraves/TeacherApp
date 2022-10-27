@@ -7,28 +7,103 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TeacherApp 
 {
     public partial class RosterForm : Form
     {
         // declaring variables
+        CreateRoster createRoster;
         public DatabaseMgrSQLite dataBaseMgr;
         private DataTable rosterDataTable = new DataTable();
+        
         public RosterForm()
         {
             InitializeComponent();
-            dataBaseMgr = new DatabaseMgrSQLite(); // creaing instance of databasemgrSqlite
+            dataBaseMgr = new DatabaseMgrSQLite();
+
+            Roster.RosterId = User.UserId;
+            PopulateRosterSelectComboBoxData();
+            ValidateUserRole();
+            
+        }
+       
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
-        private void viewRosterBTN_Click(object sender, EventArgs e)
+
+        private void saveBTN_Click(object sender, EventArgs e)
+        {
+            HideModify();
+
+            createLinkLabel.Enabled = true;
+            modifyToolStripMenuItem.Enabled = false;
+            selectComboBox1.Enabled = true;
+        }
+
+        private void ShowModify()
+        {
+            modifyPNL.Enabled = true;
+            modifyPNL.Visible = true;                       
+        }
+
+        private void HideModify()
+        {
+            modifyPNL.Enabled = false;
+            modifyPNL.Visible = false;
+        }
+
+        private void ValidateUserRole()
+        {
+            if (User.UserRole == "Teacher" || User.UserRole == "Admin")
+            {
+                HideModify();            
+            } 
+            else
+            {
+                modifyToolStripMenuItem.Visible = false;
+                createLinkLabel.Visible = false;
+                HideModify();
+            }
+        }
+       
+
+        private void PopulateAddToRosterBox()
         {
             try
             {
-                viewRosterBTN.Enabled = false;
-                ViewMode();
-                //SQLite statement
-                string sqlStr = "SELECT * FROM AccountTable";
+                addComboBox.Items.Clear();  
+                string sqlStr = "SELECT * FROM AccountTable WHERE role = \"Student\" ";
+                int rowsReturned = 0;
+
+                rosterDataTable.Clear();
+                rosterDataTable = dataBaseMgr.getData(sqlStr, out rowsReturned);
+               
+                if (rowsReturned > 0)
+                {
+                    foreach (DataRow dr in rosterDataTable.Rows)
+                    {
+                        string names = dr["firstName"].ToString() + " " + dr["lastName"].ToString();
+                        addComboBox.Items.Add(names);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void PopulateRosterTXT()
+        {
+            try
+            {
+                rosterTXT.Clear();
+
+                string rosterName = selectComboBox1.SelectedItem.ToString();
+                string sqlStr = "SELECT * FROM RosterTable WHERE UserID = '" + User.UserId + "' And RosterName = '" + rosterName + "' ";
                 int rowsReturned = 0;
                 //Admin data table calling get function from dataBaseMGR
                 rosterDataTable.Clear();
@@ -37,13 +112,12 @@ namespace TeacherApp
                 {
                     foreach (DataRow dr in rosterDataTable.Rows) // looping though rows
                     {
-                      // savving data from dr to msg then appinging to "adminTXT"
-                        string msg = dr["userID"].ToString() + " | " + dr["userName"].ToString() + " | " + dr["userPassword"].ToString() + " | " + 
-                            dr["firstName"].ToString() + " | " + dr["lastName"].ToString() + " | " + dr["schoolEmail"].ToString() + " | " + dr["alternateEmail"].ToString()
-                            + " " + dr["address"].ToString() + " | " + dr["phone"].ToString() + " | " + dr["role"].ToString();
+                        string notesName = dr["RosterName"].ToString();
+                        string noteData = dr["RosterData"].ToString();
+                        Roster.RosterId = Convert.ToInt32(dr["RosterID"]);
+
+                        rosterTXT.AppendText(noteData);
                         
-                        rosterTXT.AppendText(msg);
-                        rosterTXT.AppendText(Environment.NewLine);
                     }
                 }
             }
@@ -52,16 +126,134 @@ namespace TeacherApp
 
                 throw;
             }
-           
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+      
+
+        private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close(); 
+
+            ShowModify();
+            PopulateAddToRosterBox();
+
+            createLinkLabel.Enabled = false;
+            selectComboBox1.Enabled = false;
         }
-        public void ViewMode() //  function to make sure the textbox is in readonly mode
+
+        
+
+        private void createLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            rosterTXT.ReadOnly = true;
+            if(null == createRoster || createRoster.IsDisposed)
+            {
+                createRoster = new CreateRoster();
+            }
+
+            refreshBTN.Enabled = true;
+            selectComboBox1.Enabled = false;
+           
+            createRoster.ShowDialog();
+        }
+
+        private void selectComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                rosterTXT.Clear();
+                string rosterName = selectComboBox1.SelectedItem.ToString();    
+                string sqlStr = "SELECT * FROM RosterTable WHERE UserID = '" + User.UserId + "' And RosterName = '" + rosterName + "' ";
+                int rowsReturned = 0;
+                //Admin data table calling get function from dataBaseMGR
+                rosterDataTable.Clear();
+                rosterDataTable = dataBaseMgr.getData(sqlStr, out rowsReturned);
+                if (rowsReturned > 0)
+                {
+                    foreach (DataRow dr in rosterDataTable.Rows) // looping though rows
+                    {
+                        
+                        string noteData = dr["RosterData"].ToString();
+                        Roster.RosterData = noteData;
+                        Roster.RosterId = Convert.ToInt32(dr["RosterID"]);
+                        
+                        rosterTXT.AppendText(noteData);
+                        rosterTXT.AppendText(Environment.NewLine);
+
+                        modifyToolStripMenuItem.Enabled = true;
+                    }
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void PopulateRosterSelectComboBoxData()
+        {
+            try
+            {
+                string sqlStr = "SELECT * FROM RosterTable WHERE UserID = '" + User.UserId + "' ";
+                int rowsReturned = 0;
+
+                rosterDataTable.Clear();
+                rosterDataTable = dataBaseMgr.getData(sqlStr, out rowsReturned);
+                if (rowsReturned > 0)
+                {
+                    foreach (DataRow dr in rosterDataTable.Rows)
+                    {
+                        string rosterName = dr["RosterName"].ToString();
+                        selectComboBox1.Items.Add(rosterName);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void refreshBTN_Click(object sender, EventArgs e)
+        {
+            refreshBTN.Enabled = false;
+            selectComboBox1.Enabled = true;
+            selectComboBox1.Items.Clear();
+            
+            PopulateRosterSelectComboBoxData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string addedRosterData = addComboBox.SelectedItem.ToString();
+                Roster.RosterData = Roster.RosterData + Environment.NewLine + addedRosterData;
+
+                string sqlstr = "UPDATE RosterTable SET " +
+                    "RosterData = '" + Roster.RosterData + "' " + "WHERE RosterID = '" + Roster.RosterId + "' ";
+
+                int numRowsUpdated = 0;
+                numRowsUpdated = dataBaseMgr.putData(sqlstr);
+
+                if (numRowsUpdated == 1)
+                {
+                    PopulateRosterTXT();
+                    MessageBox.Show(addedRosterData + " Added!");
+                }
+                else
+                {
+                    MessageBox.Show("Roster NOT UPDATED, TRY AGAIN");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

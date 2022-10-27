@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TeacherApp
 {
-    class User
+    class Roster
     {
-        public static int UserId { get; set; }  
-        public static string UserRole { get; set; } 
+        public static int RosterId { get; set; }  
+        public static string RosterData { get; set; }
     }
 }

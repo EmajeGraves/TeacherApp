@@ -14,9 +14,10 @@ namespace TeacherApp
     {
         
         
-        AccountsTableForm accountsTableForm;
+        
         ModifyAccountForm modifyAccountForm;
         NotesForm notesForm;
+        RosterForm rosterForm;
 
         public HomeForm()
         {
@@ -35,7 +36,7 @@ namespace TeacherApp
             {
                 notesForm = new NotesForm();
             }
-            notesForm.Show();
+            notesForm.ShowDialog();
         }
 
         private void scheduleBTN_Click(object sender, EventArgs e)
@@ -55,16 +56,16 @@ namespace TeacherApp
                 modifyAccountForm = new ModifyAccountForm();
             }
 
-            modifyAccountForm.Show();
+            modifyAccountForm.ShowDialog();
         }
 
         private void rosterBTN_Click(object sender, EventArgs e)
         {
-            if ((null == accountsTableForm || accountsTableForm.IsDisposed))
+            if ((null == rosterForm || rosterForm.IsDisposed))
             {
-                accountsTableForm = new AccountsTableForm();
+                rosterForm = new RosterForm();
             }
-            accountsTableForm.Show();
+            rosterForm.ShowDialog();
         }
 
         

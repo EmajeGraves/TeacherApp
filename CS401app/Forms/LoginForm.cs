@@ -72,6 +72,11 @@ namespace TeacherApp
             }
 
         }
+
+        private void CancelBTN_Click(object sender, EventArgs e)
+        {
+            Close();    
+        }
     }
 
         

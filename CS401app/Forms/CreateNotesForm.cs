@@ -36,7 +36,7 @@ namespace TeacherApp
                 // checking to make sure account was created
                 if (rowsInserted == 1)
                 {
-                    MessageBox.Show("Note Created!");
+                    MessageBox.Show("NOTE CREATED!");
                     Close();
                 }
                  
@@ -46,7 +46,6 @@ namespace TeacherApp
                 MessageBox.Show(ex.Message);
 
             }
-
         }     
     }
 }

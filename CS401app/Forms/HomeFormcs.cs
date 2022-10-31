@@ -12,9 +12,9 @@ namespace TeacherApp
 {
     public partial class HomeForm : Form
     {
-        
-        
-        
+
+
+        AnnouncementsForm announcementsForm;
         ModifyAccountForm modifyAccountForm;
         NotesForm notesForm;
         RosterForm rosterForm;
@@ -27,7 +27,12 @@ namespace TeacherApp
 
         private void announcementsBTN_Click(object sender, EventArgs e)
         {
+            if(null == announcementsForm|| announcementsForm.IsDisposed)
+            {
+                announcementsForm = new AnnouncementsForm();
+            }
 
+            announcementsForm.ShowDialog();
         }
 
         private void notesBTN_Click(object sender, EventArgs e)

@@ -71,6 +71,12 @@
     <Compile Include="Forms\AccountsTableForm.Designer.cs">
       <DependentUpon>AccountsTableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AnnouncementsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AnnouncementsForm.Designer.cs">
+      <DependentUpon>AnnouncementsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +85,23 @@
     </Compile>
     <Compile Include="Databases\DatabaseMgrSQLite.cs" />
     <Compile Include="Databases\GlobalData.cs" />
+    <Compile Include="Forms\createAnnouncements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\createAnnouncements.designer.cs">
+      <DependentUpon>createAnnouncements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateNotesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\CreateNotesForm.Designer.cs">
       <DependentUpon>CreateNotesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateRoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateRoster.Designer.cs">
+      <DependentUpon>CreateRoster.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NotesForm.cs">
       <SubType>Form</SubType>
@@ -128,6 +146,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Forms\AccountsTableForm.resx">
       <DependentUpon>AccountsTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnnouncementsForm.resx">
+      <DependentUpon>AnnouncementsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>

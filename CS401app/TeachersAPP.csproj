@@ -85,11 +85,11 @@
     </Compile>
     <Compile Include="Databases\DatabaseMgrSQLite.cs" />
     <Compile Include="Databases\GlobalData.cs" />
-    <Compile Include="Forms\createAnnouncements.cs">
+    <Compile Include="Forms\CreateAnnouncements.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\createAnnouncements.designer.cs">
-      <DependentUpon>createAnnouncements.cs</DependentUpon>
+    <Compile Include="Forms\CreateAnnouncements.designer.cs">
+      <DependentUpon>CreateAnnouncements.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CreateNotesForm.cs">
       <SubType>Form</SubType>
@@ -130,6 +130,9 @@
     <Compile Include="Forms\ModifyAnnouncements.designer.cs">
       <DependentUpon>ModifyAnnouncements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NotesForm.Designer.cs">
+      <DependentUpon>NotesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Roster.cs" />
     <Compile Include="Forms\RosterForm.cs">
       <SubType>Form</SubType>
@@ -156,8 +159,8 @@
     <EmbeddedResource Include="Forms\CreateRoster.resx">
       <DependentUpon>CreateRoster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\createAnnouncements.resx">
-      <DependentUpon>createAnnouncements.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CreateAnnouncements.resx">
+      <DependentUpon>CreateAnnouncements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeFormcs.resx">
       <DependentUpon>HomeFormcs.cs</DependentUpon>
@@ -170,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ModifyAnnouncements.resx">
       <DependentUpon>ModifyAnnouncements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NotesForm.resx">
+      <DependentUpon>NotesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\RosterForm.resx">
       <DependentUpon>RosterForm.cs</DependentUpon>

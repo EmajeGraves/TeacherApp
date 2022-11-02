@@ -33,7 +33,7 @@ namespace TeacherApp
             {
                 // Saving text to variable
                 string subject = subjectTXT.Text;
-                string announcement = announcementTXT.Text;
+                string announcement = announcementTxt.Text;
 
                 // creting sqlite statement
                 string sqlStr = "INSERT INTO Students ('subject', 'announcement') VALUES('" + subject + "', '" + announcement + "')";

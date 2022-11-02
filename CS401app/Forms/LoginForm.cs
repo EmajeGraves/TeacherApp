@@ -54,8 +54,9 @@ namespace TeacherApp
                 foreach (DataRow dr in dataTable.Rows) // looping though rows
                 {
                       User.UserId = Convert.ToInt32(dr["userID"]);
+                      User.UserRole = dr["role"].ToString();
                 }
-                MessageBox.Show("Logged In Successfully!! " + "\nWelcome " + username);
+                MessageBox.Show("Logged In Successfully! " + "\nWelcome " + username);
                 
                 if ((homeForm == null || homeForm.IsDisposed))
                 {
@@ -70,6 +71,11 @@ namespace TeacherApp
                 MessageBox.Show("Login failed. Try Again.");
             }
 
+        }
+
+        private void CancelBTN_Click(object sender, EventArgs e)
+        {
+            Close();    
         }
     }
 

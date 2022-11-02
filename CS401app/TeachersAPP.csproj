@@ -91,6 +91,21 @@
     <Compile Include="Forms\createAnnouncements.designer.cs">
       <DependentUpon>createAnnouncements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CreateNotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateNotesForm.Designer.cs">
+      <DependentUpon>CreateNotesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateRoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateRoster.Designer.cs">
+      <DependentUpon>CreateRoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NotesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\HomeFormcs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +130,7 @@
     <Compile Include="Forms\ModifyAnnouncements.designer.cs">
       <DependentUpon>ModifyAnnouncements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Roster.cs" />
     <Compile Include="Forms\RosterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateNotesForm.resx">
+      <DependentUpon>CreateNotesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateRoster.resx">
+      <DependentUpon>CreateRoster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\createAnnouncements.resx">
       <DependentUpon>createAnnouncements.cs</DependentUpon>

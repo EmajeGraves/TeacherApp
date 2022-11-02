@@ -37,24 +37,27 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 104);
+            this.label1.Location = new System.Drawing.Point(87, 68);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
             // noteNameTxtBOX
             // 
-            this.noteNameTxtBOX.Location = new System.Drawing.Point(207, 103);
+            this.noteNameTxtBOX.Location = new System.Drawing.Point(138, 67);
+            this.noteNameTxtBOX.Margin = new System.Windows.Forms.Padding(2);
             this.noteNameTxtBOX.Name = "noteNameTxtBOX";
-            this.noteNameTxtBOX.Size = new System.Drawing.Size(362, 26);
+            this.noteNameTxtBOX.Size = new System.Drawing.Size(243, 20);
             this.noteNameTxtBOX.TabIndex = 1;
             // 
             // saveBTN
             // 
-            this.saveBTN.Location = new System.Drawing.Point(331, 182);
+            this.saveBTN.Location = new System.Drawing.Point(221, 118);
+            this.saveBTN.Margin = new System.Windows.Forms.Padding(2);
             this.saveBTN.Name = "saveBTN";
-            this.saveBTN.Size = new System.Drawing.Size(75, 37);
+            this.saveBTN.Size = new System.Drawing.Size(66, 24);
             this.saveBTN.TabIndex = 2;
             this.saveBTN.Text = "Save";
             this.saveBTN.UseVisualStyleBackColor = true;
@@ -62,13 +65,14 @@
             // 
             // CreateNotesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 271);
+            this.ClientSize = new System.Drawing.Size(503, 184);
             this.Controls.Add(this.saveBTN);
             this.Controls.Add(this.noteNameTxtBOX);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(776, 327);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(523, 226);
             this.Name = "CreateNotesForm";
             this.Text = "New Note";
             this.ResumeLayout(false);

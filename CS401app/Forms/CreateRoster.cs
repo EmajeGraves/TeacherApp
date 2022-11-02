@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace TeacherApp
 {
-    public partial class CreateNotesForm : Form
+    public partial class CreateRoster : Form
     {
         public DatabaseMgrSQLite dataBaseMgr;
-        public CreateNotesForm()
+        public CreateRoster()
         {
             InitializeComponent();
             dataBaseMgr = new DatabaseMgrSQLite();
@@ -24,10 +24,10 @@ namespace TeacherApp
             try
             {
                 // Saving text to variable
-                string noteName = noteNameTxtBOX.Text;
-              
+                string rosterName = nameTXT.Text;
+
                 // creting sqlite statement
-                string sqlStr = "INSERT INTO Notes(userID, noteName) VALUES ('" + User.UserId + "','" + noteName +  "')";
+                string sqlStr = "INSERT INTO RosterTable(UserID, RosterName) VALUES ('" + User.UserId + "','" + rosterName + "')";
 
                 // send data to data base
                 int rowsInserted = 0;
@@ -36,17 +36,16 @@ namespace TeacherApp
                 // checking to make sure account was created
                 if (rowsInserted == 1)
                 {
-                    MessageBox.Show("NOTE CREATED!");
+                    MessageBox.Show(rosterName + " Ceated");
                     Close();
                 }
-                 
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
 
             }
-
-        }     
+        }
     }
 }

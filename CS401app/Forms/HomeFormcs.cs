@@ -12,13 +12,15 @@ namespace TeacherApp
 {
     public partial class HomeForm : Form
     {
-        
-        
-        AccountsTableForm accountsTableForm;
+
+
+        AnnouncementsForm announcementsForm;
         ModifyAccountForm modifyAccountForm;
         CreateAccountForm createAnnouncementsForm;
         AnnouncementsForm announcementsForm;
         //NotesForm notesForm;
+        NotesForm notesForm;
+        RosterForm rosterForm;
 
         public HomeForm()
         {
@@ -28,23 +30,22 @@ namespace TeacherApp
 
         private void announcementsBTN_Click(object sender, EventArgs e)
         {
-            //shows announcements screen
-            if((null == announcementsForm || announcementsForm.IsDisposed))
+            if(null == announcementsForm|| announcementsForm.IsDisposed)
             {
                 announcementsForm = new AnnouncementsForm();
             }
-            announcementsForm.Show();
-           
+
+            announcementsForm.ShowDialog();
         }
 
-      /*  private void notesBTN_Click(object sender, EventArgs e)
+        private void notesBTN_Click(object sender, EventArgs e)
         {
             if((null == notesForm || notesForm.IsDisposed))
             {
                 notesForm = new NotesForm();
             }
-            notesForm.Show();
-        } */
+            notesForm.ShowDialog();
+        }
 
         private void scheduleBTN_Click(object sender, EventArgs e)
         {
@@ -63,16 +64,16 @@ namespace TeacherApp
                 modifyAccountForm = new ModifyAccountForm();
             }
 
-            modifyAccountForm.Show();
+            modifyAccountForm.ShowDialog();
         }
 
         private void rosterBTN_Click(object sender, EventArgs e)
         {
-            if ((null == accountsTableForm || accountsTableForm.IsDisposed))
+            if ((null == rosterForm || rosterForm.IsDisposed))
             {
-                accountsTableForm = new AccountsTableForm();
+                rosterForm = new RosterForm();
             }
-            accountsTableForm.Show();
+            rosterForm.ShowDialog();
         }
 
         

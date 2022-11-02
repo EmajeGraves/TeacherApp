@@ -99,8 +99,9 @@ namespace TeacherApp
             this.CancelBTN.TabIndex = 6;
             this.CancelBTN.Text = "Cancel";
             this.CancelBTN.UseVisualStyleBackColor = true;
+            this.CancelBTN.Click += new System.EventHandler(this.CancelBTN_Click);
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,7 +113,7 @@ namespace TeacherApp
             this.Controls.Add(this.userNameInput);
             this.Controls.Add(this.userPassword);
             this.Controls.Add(this.UserName);
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.Text = "Login Screen";
             this.ResumeLayout(false);
             this.PerformLayout();

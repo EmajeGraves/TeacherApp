@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace TeacherApp
 {
-    public partial class createAnnouncements : Form
+    public partial class CreateAnnouncements : Form
     {
         // declaring variables
         public DatabaseMgrSQLite dataBaseMgr;
 
-        public createAnnouncements()
+        public CreateAnnouncements()
         {
             InitializeComponent();
             dataBaseMgr = new DatabaseMgrSQLite();
@@ -32,15 +32,15 @@ namespace TeacherApp
             try
             {
                 // Saving text to variable
-                string subject = subjectTXT.Text;
+                //string subject = subjectTXT.Text;
                 string announcement = announcementTXT.Text;
 
                 // creting sqlite statement
-                string sqlStr = "INSERT INTO Students ('subject', 'announcement') VALUES('" + subject + "', '" + announcement + "')";
+                //string sqlStr = "INSERT INTO Students ('subject', 'announcement') VALUES('" + subject + "', '" + announcement + "')";
 
                 // send data to data base
                 int rowsInserted = 0;
-                rowsInserted = dataBaseMgr.putData(sqlStr);
+                //rowsInserted = dataBaseMgr.putData(sqlStr);
 
                 // checking to make sure announcement was created
                 if (rowsInserted == 1)

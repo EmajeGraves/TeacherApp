@@ -14,7 +14,7 @@ namespace TeacherApp
     {
         //initalize
         //HomeForm homeForm;
-        //CreateAnnouncements createAnnouncements;
+        CreateAnnouncements createAnnouncements;
         //ModifyAnnouncements modifyAnnouncements;
 
         public AnnouncementsForm()
@@ -29,7 +29,11 @@ namespace TeacherApp
 
         private void createAnnBTN_Click(object sender, EventArgs e)
         {
-            //createAnnouncements.Show();
+            if(null == createAnnouncements || createAnnouncements.IsDisposed) 
+            { 
+                createAnnouncements = new CreateAnnouncements();
+            }
+            createAnnouncements.ShowDialog();
         }
 
         private void modifyAnnouncement_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace TeacherApp
                 // checking to make sure account was created
                 if (rowsInserted == 1)
                 {
-                    MessageBox.Show(rosterName + " Ceated");
+                    MessageBox.Show(rosterName + " CREATED");
                     Close();
                 }
 

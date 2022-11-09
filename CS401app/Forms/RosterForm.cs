@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TeacherApp 
@@ -31,7 +32,7 @@ namespace TeacherApp
        
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void saveBTN_Click(object sender, EventArgs e)
@@ -86,7 +87,8 @@ namespace TeacherApp
                     foreach (DataRow dr in rosterDataTable.Rows)
                     {
                         string names = dr["firstName"].ToString() + " " + dr["lastName"].ToString();
-                        addComboBox.Items.Add(names);
+                        int userId = Convert.ToInt32(dr["userID"]);
+                        addComboBox.Items.Add(userId + " " + names);
                     }
                 }
             }
@@ -172,7 +174,7 @@ namespace TeacherApp
                     {
                         
                         string noteData = dr["RosterData"].ToString();
-                        Roster.RosterData = noteData;
+   
                         Roster.RosterId = Convert.ToInt32(dr["RosterID"]);
                         
                         rosterTXT.AppendText(noteData);
@@ -255,6 +257,27 @@ namespace TeacherApp
         private void deleteButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void GetSelectedUserID() 
+        {
+            string s = addComboBox.SelectedItem.ToString();
+            string i = s.Substring(0, 3);
+            int x = Int32.Parse(i);
+            int g = 0;
+
+            /*if (Int32.TryParse(x, out g))
+            {
+                MessageBox.Show(x);
+            } */
+            
+            
+        }
+
+
+        private void addComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            GetSelectedUserID();
         }
     }
 }

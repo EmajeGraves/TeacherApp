@@ -133,7 +133,7 @@
     <Compile Include="Forms\ModifyAnnouncements.designer.cs">
       <DependentUpon>ModifyAnnouncements.cs</DependentUpon>
     </Compile>
-    <Compile Include="Roster.cs" />
+    <Compile Include="Course.cs" />
     <Compile Include="Forms\RosterForm.cs">
       <SubType>Form</SubType>
     </Compile>

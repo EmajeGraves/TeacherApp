@@ -49,38 +49,39 @@
             // 
             this.rosterTXT.Cursor = System.Windows.Forms.Cursors.UpArrow;
             this.rosterTXT.HideSelection = false;
-            this.rosterTXT.Location = new System.Drawing.Point(58, 100);
-            this.rosterTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rosterTXT.Location = new System.Drawing.Point(39, 65);
             this.rosterTXT.Multiline = true;
             this.rosterTXT.Name = "rosterTXT";
             this.rosterTXT.ReadOnly = true;
-            this.rosterTXT.Size = new System.Drawing.Size(1009, 581);
+            this.rosterTXT.Size = new System.Drawing.Size(674, 379);
             this.rosterTXT.TabIndex = 3;
             // 
             // addComboBox
             // 
             this.addComboBox.FormattingEnabled = true;
-            this.addComboBox.Location = new System.Drawing.Point(94, 40);
+            this.addComboBox.Location = new System.Drawing.Point(63, 26);
+            this.addComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addComboBox.Name = "addComboBox";
-            this.addComboBox.Size = new System.Drawing.Size(223, 28);
+            this.addComboBox.Size = new System.Drawing.Size(150, 21);
             this.addComboBox.TabIndex = 6;
-            this.addComboBox.SelectedIndexChanged += new System.EventHandler(this.addComboBox_SelectedIndexChanged_1);
             // 
             // deleteComboBox
             // 
             this.deleteComboBox.FormattingEnabled = true;
-            this.deleteComboBox.Location = new System.Drawing.Point(624, 40);
+            this.deleteComboBox.Location = new System.Drawing.Point(416, 26);
+            this.deleteComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.deleteComboBox.Name = "deleteComboBox";
-            this.deleteComboBox.Size = new System.Drawing.Size(223, 28);
+            this.deleteComboBox.Size = new System.Drawing.Size(150, 21);
             this.deleteComboBox.TabIndex = 7;
-            this.deleteComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+         
             // 
             // doneBTN
             // 
             this.doneBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doneBTN.Location = new System.Drawing.Point(474, 105);
+            this.doneBTN.Location = new System.Drawing.Point(316, 68);
+            this.doneBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.doneBTN.Name = "doneBTN";
-            this.doneBTN.Size = new System.Drawing.Size(108, 49);
+            this.doneBTN.Size = new System.Drawing.Size(72, 32);
             this.doneBTN.TabIndex = 12;
             this.doneBTN.Text = "Done";
             this.doneBTN.UseVisualStyleBackColor = true;
@@ -89,9 +90,10 @@
             // selectComboBox1
             // 
             this.selectComboBox1.FormattingEnabled = true;
-            this.selectComboBox1.Location = new System.Drawing.Point(465, 46);
+            this.selectComboBox1.Location = new System.Drawing.Point(310, 30);
+            this.selectComboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.selectComboBox1.Name = "selectComboBox1";
-            this.selectComboBox1.Size = new System.Drawing.Size(248, 28);
+            this.selectComboBox1.Size = new System.Drawing.Size(167, 21);
             this.selectComboBox1.TabIndex = 13;
             this.selectComboBox1.SelectedIndexChanged += new System.EventHandler(this.selectComboBox1_SelectedIndexChanged);
             // 
@@ -99,7 +101,8 @@
             // 
             this.SelectLBL.AutoSize = true;
             this.SelectLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectLBL.Location = new System.Drawing.Point(372, 48);
+            this.SelectLBL.Location = new System.Drawing.Point(248, 31);
+            this.SelectLBL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SelectLBL.Name = "SelectLBL";
             this.SelectLBL.Size = new System.Drawing.Size(58, 17);
             this.SelectLBL.TabIndex = 14;
@@ -108,9 +111,10 @@
             // createLinkLabel
             // 
             this.createLinkLabel.AutoSize = true;
-            this.createLinkLabel.Location = new System.Drawing.Point(546, 23);
+            this.createLinkLabel.Location = new System.Drawing.Point(352, 10);
+            this.createLinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.createLinkLabel.Name = "createLinkLabel";
-            this.createLinkLabel.Size = new System.Drawing.Size(92, 20);
+            this.createLinkLabel.Size = new System.Drawing.Size(63, 13);
             this.createLinkLabel.TabIndex = 15;
             this.createLinkLabel.TabStop = true;
             this.createLinkLabel.Text = "Create New";
@@ -123,17 +127,17 @@
             this.modifyPNL.Controls.Add(this.doneBTN);
             this.modifyPNL.Controls.Add(this.deleteComboBox);
             this.modifyPNL.Controls.Add(this.addComboBox);
-            this.modifyPNL.Location = new System.Drawing.Point(58, 709);
+            this.modifyPNL.Location = new System.Drawing.Point(39, 461);
+            this.modifyPNL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modifyPNL.Name = "modifyPNL";
-            this.modifyPNL.Size = new System.Drawing.Size(1010, 189);
+            this.modifyPNL.Size = new System.Drawing.Size(673, 112);
             this.modifyPNL.TabIndex = 16;
             // 
             // deleteButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(856, 37);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.deleteButton.Location = new System.Drawing.Point(571, 24);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(112, 35);
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 16;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -141,10 +145,9 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(327, 37);
-            this.addButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addButton.Location = new System.Drawing.Point(218, 24);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(112, 35);
+            this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 15;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
@@ -154,28 +157,28 @@
             // 
             this.modifyToolStripMenuItem.Enabled = false;
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
             this.modifyToolStripMenuItem.Text = "Modify";
             this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modifyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1190, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(791, 24);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // refreshBTN
             // 
             this.refreshBTN.Enabled = false;
-            this.refreshBTN.Location = new System.Drawing.Point(723, 46);
-            this.refreshBTN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.refreshBTN.Location = new System.Drawing.Point(482, 30);
             this.refreshBTN.Name = "refreshBTN";
-            this.refreshBTN.Size = new System.Drawing.Size(112, 35);
+            this.refreshBTN.Size = new System.Drawing.Size(75, 23);
             this.refreshBTN.TabIndex = 18;
             this.refreshBTN.Text = "Refresh";
             this.refreshBTN.UseVisualStyleBackColor = true;
@@ -183,10 +186,10 @@
             // 
             // RosterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(1190, 911);
+            this.ClientSize = new System.Drawing.Size(791, 581);
             this.Controls.Add(this.refreshBTN);
             this.Controls.Add(this.modifyPNL);
             this.Controls.Add(this.createLinkLabel);
@@ -195,8 +198,9 @@
             this.Controls.Add(this.rosterTXT);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(1206, 950);
-            this.MinimumSize = new System.Drawing.Size(1202, 717);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(809, 631);
+            this.MinimumSize = new System.Drawing.Size(807, 480);
             this.Name = "RosterForm";
             this.Text = "Roster";
             this.modifyPNL.ResumeLayout(false);

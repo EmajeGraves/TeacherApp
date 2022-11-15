@@ -8,13 +8,12 @@ namespace TeacherApp
 {
     class Course
     {
-        public static int CourseId { get; set; }  
-        
+        public static int CourseId { get; set; }
 
-        public static List<int> IdList = new List<int>();
+        public static List<int> CourseSelectList = new List<int>();
 
-        public static List<int> CouseData = new List<int>();
-
+        public static List<int> AddIdList = new List<int>();
+        public static List<int> DeleteIdList = new List<int>();
 
     }
 }

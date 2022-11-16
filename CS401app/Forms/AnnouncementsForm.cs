@@ -12,38 +12,21 @@ namespace TeacherApp
 {
     public partial class AnnouncementsForm : Form
     {
-        //initalize
-        //HomeForm homeForm;
-        CreateAnnouncements createAnnouncements;
+        
+         CreateAnnouncements createAnnouncements;
         //ModifyAnnouncements modifyAnnouncements;
 
         public AnnouncementsForm()
         {
             InitializeComponent();
-        }
-
-        private void homebtn_Click(object sender, EventArgs e)
+        }   
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //homeForm.Show();
-        }
-
-        private void createAnnBTN_Click(object sender, EventArgs e)
-        {
-            if(null == createAnnouncements || createAnnouncements.IsDisposed) 
-            { 
+            if (null == createAnnouncements || createAnnouncements.IsDisposed)
+            {
                 createAnnouncements = new CreateAnnouncements();
             }
             createAnnouncements.ShowDialog();
-        }
-
-        private void modifyAnnouncement_Click(object sender, EventArgs e)
-        {
-            //modifyAnnouncements.Show();
-        }
-
-        private void AnnouncementsTXT_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

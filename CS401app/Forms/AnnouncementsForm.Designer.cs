@@ -46,7 +46,7 @@ namespace TeacherApp
             this.AnnouncementsTXT.ReadOnly = true;
             this.AnnouncementsTXT.Size = new System.Drawing.Size(674, 311);
             this.AnnouncementsTXT.TabIndex = 5;
-            this.AnnouncementsTXT.TextChanged += new System.EventHandler(this.AnnouncementsTXT_TextChanged);
+            
             // 
             // menuStrip1
             // 
@@ -64,6 +64,7 @@ namespace TeacherApp
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.createToolStripMenuItem.Text = "Create";
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // modifyToolStripMenuItem
             // 

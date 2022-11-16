@@ -113,6 +113,7 @@ namespace TeacherApp
             this.Controls.Add(this.userNameInput);
             this.Controls.Add(this.userPassword);
             this.Controls.Add(this.UserName);
+            this.MaximumSize = new System.Drawing.Size(630, 437);
             this.Name = "LoginForm";
             this.Text = "Login Screen";
             this.ResumeLayout(false);

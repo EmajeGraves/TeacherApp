@@ -16,8 +16,8 @@ namespace TeacherApp
 {
     public partial class RosterForm : Form
     {
-        // declaring variables
         CreateRoster createRoster;
+       
         public DatabaseMgrSQLite dataBaseMgr;
         private DataTable rosterDataTable = new DataTable();
         

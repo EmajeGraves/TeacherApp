@@ -71,6 +71,7 @@
     <Compile Include="Forms\AccountsTableForm.Designer.cs">
       <DependentUpon>AccountsTableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Announcements.cs" />
     <Compile Include="Forms\AnnouncementsForm.cs">
       <SubType>Form</SubType>
     </Compile>

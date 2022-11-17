@@ -11,9 +11,7 @@ namespace TeacherApp
         public static int CourseId { get; set; }
 
         public static List<int> CourseSelectList = new List<int>();
-
         public static List<int> AddIdList = new List<int>();
         public static List<int> DeleteIdList = new List<int>();
-
     }
 }

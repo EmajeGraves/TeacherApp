@@ -29,57 +29,72 @@ namespace TeacherApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.AnnouncementsTXT = new System.Windows.Forms.TextBox();
+            this.announcementsTXT = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // AnnouncementsTXT
+            // announcementsTXT
             // 
-            this.AnnouncementsTXT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.AnnouncementsTXT.HideSelection = false;
-            this.AnnouncementsTXT.Location = new System.Drawing.Point(72, 59);
-            this.AnnouncementsTXT.Multiline = true;
-            this.AnnouncementsTXT.Name = "AnnouncementsTXT";
-            this.AnnouncementsTXT.ReadOnly = true;
-            this.AnnouncementsTXT.Size = new System.Drawing.Size(674, 311);
-            this.AnnouncementsTXT.TabIndex = 5;
-            
+            this.announcementsTXT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.announcementsTXT.HideSelection = false;
+            this.announcementsTXT.Location = new System.Drawing.Point(52, 57);
+            this.announcementsTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.announcementsTXT.MaximumSize = new System.Drawing.Size(1009, 604);
+            this.announcementsTXT.Multiline = true;
+            this.announcementsTXT.Name = "announcementsTXT";
+            this.announcementsTXT.ReadOnly = true;
+            this.announcementsTXT.Size = new System.Drawing.Size(1009, 587);
+            this.announcementsTXT.TabIndex = 5;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
-            this.modifyToolStripMenuItem});
+            this.modifyToolStripMenuItem,
+            this.refreshToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1113, 35);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
             this.createToolStripMenuItem.Text = "Create";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // modifyToolStripMenuItem
             // 
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
             this.modifyToolStripMenuItem.Text = "Modify";
+            this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(86, 29);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // AnnouncementsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.AnnouncementsTXT);
+            this.ClientSize = new System.Drawing.Size(1113, 694);
+            this.Controls.Add(this.announcementsTXT);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1135, 750);
             this.Name = "AnnouncementsForm";
             this.Text = "Announcements";
             this.menuStrip1.ResumeLayout(false);
@@ -90,9 +105,10 @@ namespace TeacherApp
         }
 
         #endregion
-        private System.Windows.Forms.TextBox AnnouncementsTXT;
+        private System.Windows.Forms.TextBox announcementsTXT;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }

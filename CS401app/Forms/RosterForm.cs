@@ -26,8 +26,7 @@ namespace TeacherApp
             InitializeComponent();
             dataBaseMgr = new DatabaseMgrSQLite();
 
-            ValidateUserRole();
-            
+            ValidateUserRole();           
         }
 
         private void saveBTN_Click(object sender, EventArgs e)
@@ -55,8 +54,6 @@ namespace TeacherApp
             selectComboBox1.Text = string.Empty;
         }
 
-        
-
         private void createLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if(null == createRoster || createRoster.IsDisposed)
@@ -77,13 +74,12 @@ namespace TeacherApp
                 rosterTXT.Clear();
 
                 modifyToolStripMenuItem.Enabled = true;
-
-              
+        
                 Course.CourseId = GetSelectedCourseId();
 
                 string sqlStr = "Select AccountTable.firstName, AccountTable.lastName, StudentCourseTable.courseId, StudentCourseTable.userID From AccountTable, StudentCourseTable WHERE AccountTable.userID = StudentCourseTable.userID AND StudentCourseTable.courseId = '" + Course.CourseId + "';";
                 int rowsReturned = 0;
-                //Admin data table calling get function from dataBaseMGR
+                
                 rosterDataTable.Clear();
                 rosterDataTable = dataBaseMgr.getData(sqlStr, out rowsReturned);
                 if (rowsReturned > 0)
@@ -93,16 +89,13 @@ namespace TeacherApp
                         string firstName = dr["firstName"].ToString();
                         string lastName = dr["lastName"].ToString();    
                         
- 
                         rosterTXT.AppendText(firstName + " " + lastName);
                         rosterTXT.AppendText(Environment.NewLine);                     
                     }
                 }
-
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -133,10 +126,9 @@ namespace TeacherApp
                 else 
                 {
                     int selectedUserId = GetAddSelectedUserID();
-
                     string sqlStr = "INSERT INTO StudentCourseTable(userID, courseId) VALUES ('" + selectedUserId + "','" + Course.CourseId + "')";
-
                     int rowsInserted = 0;
+                   
                     rowsInserted = dataBaseMgr.putData(sqlStr);
 
                     if (rowsInserted == 1)
@@ -158,8 +150,8 @@ namespace TeacherApp
             {
                 int selectedUserId = GetDeleteSelectedUserID(); 
                 string sqlStr = "DELETE FROM StudentCourseTable WHERE userID = '" + selectedUserId + "' AND courseId = '" + Course.CourseId + "' ";
-
                 int rowsInserted = 0;
+               
                 rowsInserted = dataBaseMgr.putData(sqlStr);              
                 if (rowsInserted == 0)
                 {
@@ -246,7 +238,6 @@ namespace TeacherApp
                         int userId = Convert.ToInt32(dr["userID"]);
 
                         Course.AddIdList.Add(userId);
-
                         addComboBox.Items.Add(userId + " " + names);
                     }
                 }
@@ -314,17 +305,13 @@ namespace TeacherApp
         }
 
         private bool CheckIfUserInRoster()
-        { //Change to check database for user in roster
+        { 
             int selectedUserId = GetAddSelectedUserID();
-
-            //step2 generate sql insert statement
             string sqlStr = "SELECT * From StudentCourseTable WHERE UserID = '" + selectedUserId + "' AND CourseId = '" + Course.CourseId + "' ";
-
-            //step 3 get data to database using dbMgr
             int rowsReturned = 0;
+            
             rosterDataTable = dataBaseMgr.getData(sqlStr, out rowsReturned);
 
-            //if rowsReturned == 1, then we found the user
             if (rowsReturned == 1)
             {
                 return true;
@@ -352,7 +339,6 @@ namespace TeacherApp
             {
                 HideModify();
                 PopulateTeacherSelectComboBoxData();
-
             }
             else
             {

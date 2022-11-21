@@ -52,7 +52,7 @@ namespace TeacherApp
             createLinkLabel.Enabled = false;
             selectComboBox1.Enabled = false;
 
-            selectComboBox1.Text= string.Empty;
+            selectComboBox1.Text = string.Empty;
         }
 
         
@@ -75,10 +75,13 @@ namespace TeacherApp
             try
             {
                 rosterTXT.Clear();
-                
-                int selectedCourseId = GetSelectedCourseId();
 
-                string sqlStr = "Select AccountTable.firstName, AccountTable.lastName, StudentCourseTable.courseId, StudentCourseTable.userID From AccountTable, StudentCourseTable WHERE AccountTable.userID = StudentCourseTable.userID AND StudentCourseTable.courseId = '" + selectedCourseId + "';";
+                modifyToolStripMenuItem.Enabled = true;
+
+              
+                Course.CourseId = GetSelectedCourseId();
+
+                string sqlStr = "Select AccountTable.firstName, AccountTable.lastName, StudentCourseTable.courseId, StudentCourseTable.userID From AccountTable, StudentCourseTable WHERE AccountTable.userID = StudentCourseTable.userID AND StudentCourseTable.courseId = '" + Course.CourseId + "';";
                 int rowsReturned = 0;
                 //Admin data table calling get function from dataBaseMGR
                 rosterDataTable.Clear();
@@ -89,15 +92,13 @@ namespace TeacherApp
                     {
                         string firstName = dr["firstName"].ToString();
                         string lastName = dr["lastName"].ToString();    
-                        Course.CourseId = Convert.ToInt32(dr["courseId"]);
+                        
  
                         rosterTXT.AppendText(firstName + " " + lastName);
-                        rosterTXT.AppendText(Environment.NewLine);
-
-                        modifyToolStripMenuItem.Enabled = true;
+                        rosterTXT.AppendText(Environment.NewLine);                     
                     }
-
                 }
+
             }
             catch (Exception)
             {
@@ -110,9 +111,12 @@ namespace TeacherApp
 
         private void refreshBTN_Click(object sender, EventArgs e)
         {
-            refreshBTN.Enabled = false;
             selectComboBox1.Enabled = true;
+            
             selectComboBox1.Items.Clear();
+            rosterTXT.Clear();  
+            
+            selectComboBox1.Text = String.Empty;
             
             ValidateUserRole();
         }
@@ -121,6 +125,7 @@ namespace TeacherApp
         { 
            try
             {
+
                 if(CheckIfUserInRoster() == true) 
                 {
                     MessageBox.Show(addComboBox.SelectedItem.ToString() + " ALREADY IN CLASS.");
@@ -152,20 +157,18 @@ namespace TeacherApp
             try
             {
                 int selectedUserId = GetDeleteSelectedUserID(); 
-                string sqlStr = "DELETE FROM StudentCourseTable WHERE userID = '" + selectedUserId + "' AND courseId = '" + Course.CourseId+ "' ";
+                string sqlStr = "DELETE FROM StudentCourseTable WHERE userID = '" + selectedUserId + "' AND courseId = '" + Course.CourseId + "' ";
 
                 int rowsInserted = 0;
                 rowsInserted = dataBaseMgr.putData(sqlStr);              
                 if (rowsInserted == 0)
                 {
                     MessageBox.Show("Student Deleted");
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
         }
         // make select show course name
@@ -330,7 +333,6 @@ namespace TeacherApp
             {
                 return false;
             }
-
         }
         private void ShowModify()
         {
@@ -360,13 +362,6 @@ namespace TeacherApp
                 PopulateStudentSelectComboBoxData();
             }
         }
-
-
-        
-
-        
-
-      
     }
 }
 

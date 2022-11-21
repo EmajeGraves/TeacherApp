@@ -60,7 +60,7 @@
             // 
             this.addComboBox.FormattingEnabled = true;
             this.addComboBox.Location = new System.Drawing.Point(63, 26);
-            this.addComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.addComboBox.Name = "addComboBox";
             this.addComboBox.Size = new System.Drawing.Size(150, 21);
             this.addComboBox.TabIndex = 6;
@@ -69,17 +69,16 @@
             // 
             this.deleteComboBox.FormattingEnabled = true;
             this.deleteComboBox.Location = new System.Drawing.Point(416, 26);
-            this.deleteComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.deleteComboBox.Name = "deleteComboBox";
             this.deleteComboBox.Size = new System.Drawing.Size(150, 21);
             this.deleteComboBox.TabIndex = 7;
-         
             // 
             // doneBTN
             // 
             this.doneBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.doneBTN.Location = new System.Drawing.Point(316, 68);
-            this.doneBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.doneBTN.Margin = new System.Windows.Forms.Padding(2);
             this.doneBTN.Name = "doneBTN";
             this.doneBTN.Size = new System.Drawing.Size(72, 32);
             this.doneBTN.TabIndex = 12;
@@ -91,7 +90,7 @@
             // 
             this.selectComboBox1.FormattingEnabled = true;
             this.selectComboBox1.Location = new System.Drawing.Point(310, 30);
-            this.selectComboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.selectComboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.selectComboBox1.Name = "selectComboBox1";
             this.selectComboBox1.Size = new System.Drawing.Size(167, 21);
             this.selectComboBox1.TabIndex = 13;
@@ -128,7 +127,7 @@
             this.modifyPNL.Controls.Add(this.deleteComboBox);
             this.modifyPNL.Controls.Add(this.addComboBox);
             this.modifyPNL.Location = new System.Drawing.Point(39, 461);
-            this.modifyPNL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modifyPNL.Margin = new System.Windows.Forms.Padding(2);
             this.modifyPNL.Name = "modifyPNL";
             this.modifyPNL.Size = new System.Drawing.Size(673, 112);
             this.modifyPNL.TabIndex = 16;
@@ -175,7 +174,6 @@
             // 
             // refreshBTN
             // 
-            this.refreshBTN.Enabled = false;
             this.refreshBTN.Location = new System.Drawing.Point(482, 30);
             this.refreshBTN.Name = "refreshBTN";
             this.refreshBTN.Size = new System.Drawing.Size(75, 23);
@@ -198,7 +196,7 @@
             this.Controls.Add(this.rosterTXT);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(809, 631);
             this.MinimumSize = new System.Drawing.Size(807, 480);
             this.Name = "RosterForm";

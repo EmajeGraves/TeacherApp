@@ -11,10 +11,7 @@ using System.Windows.Forms;
 namespace TeacherApp
 {
     public partial class ModifyAccountForm : Form
-    {
-        // passes user from home screen
-        
-        
+    {     
         public DatabaseMgrSQLite dbMgr;
         public DataTable dataTable = new DataTable();
         
@@ -32,15 +29,14 @@ namespace TeacherApp
 
             try
             {
-                //SQLite statement
                 string sqlStr = "SELECT * From AccountTable WHERE userID = '" + User.UserId + "' ";
                 int rowsReturned = 0;
-                //Admin data table calling get function from dataBaseMGR
+              
                 dataTable.Clear();
                 dataTable = dbMgr.getData(sqlStr, out rowsReturned);
                 if (rowsReturned > 0)
                 {
-                    foreach (DataRow dr in dataTable.Rows) // looping though rows
+                    foreach (DataRow dr in dataTable.Rows) 
                     {
                         userNameTXT.Text = dr["userName"].ToString();
                         passwordTXT.Text = dr["userPassword"].ToString();
@@ -68,7 +64,6 @@ namespace TeacherApp
         {
             try
             {
-                // read info from screen
                 string username = userNameTXT.Text.ToString();
                 string userPassword = passwordTXT.Text.ToString();
                 string firstName = firstNameTXT.Text.ToString();
@@ -81,8 +76,7 @@ namespace TeacherApp
                 string email = emailTXT.Text.ToString();
                 string schoolEmail = schoolEmailTXT.Text.ToString();
                 string phone = phoneTXT.Text;
-
-                // generate query string
+ 
                 string sqlstr = "UPDATE AccountTable SET " +
                     "username = '" + username + "', " +
                     "userPassword = '" + userPassword + "', " +
@@ -97,22 +91,18 @@ namespace TeacherApp
                     "phone = '" + phone + "' " +
                     "WHERE userID = '" + User.UserId + "' ";
 
-                // Run the update with the dbMgr and check results
                 int numRowsUpdated = 0;
                 numRowsUpdated = dbMgr.putData(sqlstr);
 
                 if (numRowsUpdated == 1)
                 {
-                    HomeForm homeform = new HomeForm();
-
-                    MessageBox.Show("User updated", "Modify User Status");
+                     MessageBox.Show("User updated", "Modify User Status");
                 }
                 else
                 {
                     MessageBox.Show("User NOT updated", "Modify User Status");
 
                 }
-                //updateModifyList(); syntax error
             }
             catch (Exception)
             {

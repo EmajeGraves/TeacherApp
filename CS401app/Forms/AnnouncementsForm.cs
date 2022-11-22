@@ -13,7 +13,8 @@ namespace TeacherApp
     public partial class AnnouncementsForm : Form
     {
         
-         CreateAnnouncements createAnnouncements;
+        CreateAnnouncements createAnnouncements;
+        ModifyAnnouncements modifyAnnouncements;
 
         public DatabaseMgrSQLite dataBaseMgr;
         private DataTable rosterDataTable = new DataTable();
@@ -42,7 +43,9 @@ namespace TeacherApp
 
         private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if(null == modifyAnnouncements || modifyAnnouncements.IsDisposed) { modifyAnnouncements = new ModifyAnnouncements();}
+            
+            modifyAnnouncements.ShowDialog();
         }
 
         private void PopulateStudentAnnouncements() 
@@ -52,7 +55,7 @@ namespace TeacherApp
                 announcementsTXT.Clear();
 
                 string announcements = announcementsTXT.Text;
-                string sqlStr = "Select Distinct AnnouncementTable.date, AnnouncementTable.announcementData From AnnouncementTable, CourseTable, StudentCourseTable WHERE AnnouncementTable.courseId = StudentCourseTable.courseId AND StudentCourseTable.userId = '" + User.UserId + "';";
+                string sqlStr = "Select Distinct AnnouncementTable.date, AnnouncementTable.courseId, AnnouncementTable.announcementData From AnnouncementTable, CourseTable, StudentCourseTable WHERE AnnouncementTable.courseId = StudentCourseTable.courseId AND StudentCourseTable.userId = '" + User.UserId + "';";
                 int rowsReturned = 0;
 
                 rosterDataTable.Clear();
@@ -61,10 +64,11 @@ namespace TeacherApp
                 {
                     foreach (DataRow dr in rosterDataTable.Rows)
                     {
+                        string courseId = dr["courseId"].ToString();
                         string date = dr["date"].ToString();
                         string announcementData = dr["announcementData"].ToString();
 
-                        announcementsTXT.AppendText(date + " - " + announcementData);
+                        announcementsTXT.AppendText(courseId + " - " + date + " - " + announcementData);
                         announcementsTXT.AppendText(Environment.NewLine);
 
                         modifyToolStripMenuItem.Enabled = true;
@@ -84,7 +88,7 @@ namespace TeacherApp
                 announcementsTXT.Clear();
 
                 string announcements = announcementsTXT.Text;
-                string sqlStr = "Select DISTINCT AnnouncementTable.date, AnnouncementTable.announcementData From AnnouncementTable, CourseTable, StudentCourseTable WHERE AnnouncementTable.courseId = StudentCourseTable.courseId AND CourseTable.teacherId = '" + User.UserId + "';";
+                string sqlStr = "Select DISTINCT AnnouncementTable.courseId, AnnouncementTable.date, AnnouncementTable.announcementData From AnnouncementTable WHERE AnnouncementTable.userId = '" + User.UserId + "';";
                 int rowsReturned = 0;
 
                 rosterDataTable.Clear();
@@ -93,10 +97,11 @@ namespace TeacherApp
                 {
                     foreach (DataRow dr in rosterDataTable.Rows)
                     {
+                        string courseId = dr["courseId"].ToString();
                         string date = dr["date"].ToString();
                         string announcementData = dr["announcementData"].ToString();
 
-                        announcementsTXT.AppendText(date + " - " + announcementData);
+                        announcementsTXT.AppendText(courseId + " - " + date + " - " + announcementData);
                         announcementsTXT.AppendText(Environment.NewLine);
 
                         modifyToolStripMenuItem.Enabled = true;
@@ -124,7 +129,7 @@ namespace TeacherApp
 
         private void StudentScreen()
         {
-            menuStrip1.Visible= false;
+            menuStrip1.Visible = false;
         }
     }
 }

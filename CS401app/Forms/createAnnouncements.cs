@@ -61,6 +61,7 @@ namespace TeacherApp
         {
             try
             {
+                selectComboBox.Items.Clear();
                 string sqlStr = "SELECT * FROM CourseTable WHERE teacherId = '" + User.UserId + "' ";
                 int rowsReturned = 0;
 

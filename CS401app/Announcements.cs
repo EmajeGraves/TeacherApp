@@ -8,6 +8,7 @@ namespace TeacherApp.Forms
 {
     class Announcements
     {
-        public static int AnnouncementId { get; set; }
+        public static List<int> AnnouncementIdList = new List<int>();
+        public static List<int> CourseIdList = new List<int>();
     }
 }

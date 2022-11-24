@@ -3,97 +3,102 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TeacherApp.Forms;
 
 namespace TeacherApp
 {
-    public partial class createAnnouncements : Form
+    public partial class CreateAnnouncements : Form
     {
         // declaring variables
         public DatabaseMgrSQLite dataBaseMgr;
+        private DataTable rosterDataTable = new DataTable();
 
-        public createAnnouncements()
+        public CreateAnnouncements()
         {
             InitializeComponent();
             dataBaseMgr = new DatabaseMgrSQLite();
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            PopulateSelectCourseId();
         }
 
         private void submitAnnouncementBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Changes Saved");
             try
             {
-                // Saving text to variable
+
+
+                int courseId = GetSelectedCourseID();
                 string subject = subjectTXT.Text;
-                string announcement = announcementTXT.Text;
+                string date = dateTimePicker.Text;
+                string announcement = announcementTXT.Text; 
+                string sqlStr = "INSERT INTO AnnouncementTable(courseID, userId, subject, date, announcementData) VALUES ('" + courseId + "','" + User.UserId + "','" + subject + "','" + date + "','" + announcement + "')";
 
-                // creting sqlite statement
-                string sqlStr = "INSERT INTO Students ('subject', 'announcement') VALUES('" + subject + "', '" + announcement + "')";
-
-                // send data to data base
                 int rowsInserted = 0;
                 rowsInserted = dataBaseMgr.putData(sqlStr);
 
-                // checking to make sure announcement was created
                 if (rowsInserted == 1)
-                {
-                    MessageBox.Show("Announcement Created!");
+                {  
+                    MessageBox.Show( "Announcement Sent");
+
+                    ClearTexts();
                     Close();
-                }
-                else
-                {
-                    MessageBox.Show("Error , Try Again");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-
             }
-            /*
-            //step 1: read and store data from file
-            string subject = subjectTXT.Text;
-            string announcement = announcementTXT.Text;
-
-            //step2 generate sql insert statement
-            string sqlStr = "INSERT INTO Students ('subject', 'announcement') VALUES('" + subject + "', '" + announcement + "')";
-
-            //step 3 send data to database using dbMgr
-            int rowsInserted = 0;
-            rowsInserted = dbMgr.putData(sqlStr);
-
-            //test 3 
-            MessageBox.Show("Inserted " + rowsInserted + " rows");
-
-            //step 4 display success or error
-
-            if (rowsInserted == 1)
-            {
-                MessageBox.Show("Data added Successfully");
-            }
-            else
-            {
-                MessageBox.Show("Error: Not added successfully");
-            }
-            */
         }
-
-        private void createAnnouncements_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void cancelBtn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        private void PopulateSelectCourseId()
+        {
+            try
+            {
+                string sqlStr = "SELECT * FROM CourseTable WHERE teacherId = '" + User.UserId + "' ";
+                int rowsReturned = 0;
+
+                rosterDataTable.Clear();
+                rosterDataTable = dataBaseMgr.getData(sqlStr, out rowsReturned);
+                if (rowsReturned > 0)
+                {
+                    foreach (DataRow dr in rosterDataTable.Rows)
+                    {
+                        int courseIds = Convert.ToInt32(dr["courseID"]);                
+                        
+                        Announcements.CourseIdList.Add(courseIds);
+                        selectComboBox.Items.Add(courseIds);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void ClearTexts()
+        {
+            subjectTXT.Clear();
+            announcementTXT.Clear();
+            selectComboBox.Text = string.Empty;
+
+        }
+
+        private int GetSelectedCourseID()
+        {
+            int indexOfSelectComboBox = selectComboBox.SelectedIndex;
+            int courseId = Announcements.CourseIdList[indexOfSelectComboBox];
+
+            return courseId;
         }
     }
 }

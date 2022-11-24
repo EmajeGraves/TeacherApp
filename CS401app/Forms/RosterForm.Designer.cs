@@ -36,11 +36,11 @@
             this.SelectLBL = new System.Windows.Forms.Label();
             this.createLinkLabel = new System.Windows.Forms.LinkLabel();
             this.modifyPNL = new System.Windows.Forms.Panel();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.refreshBTN = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
             this.modifyPNL.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,6 @@
             this.deleteComboBox.Name = "deleteComboBox";
             this.deleteComboBox.Size = new System.Drawing.Size(150, 21);
             this.deleteComboBox.TabIndex = 7;
-            this.deleteComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // doneBTN
             // 
@@ -111,7 +110,7 @@
             // createLinkLabel
             // 
             this.createLinkLabel.AutoSize = true;
-            this.createLinkLabel.Location = new System.Drawing.Point(364, 15);
+            this.createLinkLabel.Location = new System.Drawing.Point(352, 10);
             this.createLinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.createLinkLabel.Name = "createLinkLabel";
             this.createLinkLabel.Size = new System.Drawing.Size(63, 13);
@@ -130,8 +129,18 @@
             this.modifyPNL.Location = new System.Drawing.Point(39, 461);
             this.modifyPNL.Margin = new System.Windows.Forms.Padding(2);
             this.modifyPNL.Name = "modifyPNL";
-            this.modifyPNL.Size = new System.Drawing.Size(673, 123);
+            this.modifyPNL.Size = new System.Drawing.Size(673, 112);
             this.modifyPNL.TabIndex = 16;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(571, 24);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 16;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // addButton
             // 
@@ -147,23 +156,24 @@
             // 
             this.modifyToolStripMenuItem.Enabled = false;
             this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
-            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
             this.modifyToolStripMenuItem.Text = "Modify";
             this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modifyToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(793, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(791, 24);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // refreshBTN
             // 
-            this.refreshBTN.Enabled = false;
             this.refreshBTN.Location = new System.Drawing.Point(482, 30);
             this.refreshBTN.Name = "refreshBTN";
             this.refreshBTN.Size = new System.Drawing.Size(75, 23);
@@ -172,22 +182,12 @@
             this.refreshBTN.UseVisualStyleBackColor = true;
             this.refreshBTN.Click += new System.EventHandler(this.refreshBTN_Click);
             // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(571, 24);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 16;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
             // RosterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            this.ClientSize = new System.Drawing.Size(793, 592);
+            this.ClientSize = new System.Drawing.Size(791, 581);
             this.Controls.Add(this.refreshBTN);
             this.Controls.Add(this.modifyPNL);
             this.Controls.Add(this.createLinkLabel);

@@ -23,23 +23,19 @@ namespace TeacherApp
         {
             try
             {
-                // Saving text to variable
                 string noteName = noteNameTxtBOX.Text;
+                string noteData = noteTXT.Text;
               
-                // creting sqlite statement
-                string sqlStr = "INSERT INTO Notes(userID, noteName) VALUES ('" + User.UserId + "','" + noteName +  "')";
+                string sqlStr = "INSERT INTO Notes(userID, noteName, noteData) VALUES ('" + User.UserId + "','" + noteName + "','" + noteData + "')";
 
-                // send data to data base
                 int rowsInserted = 0;
                 rowsInserted = dataBaseMgr.putData(sqlStr);
 
-                // checking to make sure account was created
                 if (rowsInserted == 1)
                 {
                     MessageBox.Show("NOTE CREATED!");
                     Close();
-                }
-                 
+                }             
             }
             catch (Exception ex)
             {

@@ -105,7 +105,7 @@ namespace TeacherApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 398);
+            this.ClientSize = new System.Drawing.Size(614, 347);
             this.Controls.Add(this.CancelBTN);
             this.Controls.Add(this.LoginBTN);
             this.Controls.Add(this.createNewLink);
@@ -113,6 +113,7 @@ namespace TeacherApp
             this.Controls.Add(this.userNameInput);
             this.Controls.Add(this.userPassword);
             this.Controls.Add(this.UserName);
+            this.MaximumSize = new System.Drawing.Size(630, 386);
             this.Name = "LoginForm";
             this.Text = "Login Screen";
             this.ResumeLayout(false);

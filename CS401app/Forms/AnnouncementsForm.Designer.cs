@@ -29,75 +29,86 @@ namespace TeacherApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.createAnnBTN = new System.Windows.Forms.Button();
-            this.AnnouncementsTXT = new System.Windows.Forms.TextBox();
-            this.homebtn = new System.Windows.Forms.Button();
-            this.modifyAnnouncement = new System.Windows.Forms.Button();
+            this.announcementsTXT = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // createAnnBTN
+            // announcementsTXT
             // 
-            this.createAnnBTN.Location = new System.Drawing.Point(468, 401);
-            this.createAnnBTN.Name = "createAnnBTN";
-            this.createAnnBTN.Size = new System.Drawing.Size(155, 23);
-            this.createAnnBTN.TabIndex = 6;
-            this.createAnnBTN.Text = "Create Announcement";
-            this.createAnnBTN.UseVisualStyleBackColor = true;
-            this.createAnnBTN.Click += new System.EventHandler(this.createAnnBTN_Click);
+            this.announcementsTXT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.announcementsTXT.HideSelection = false;
+            this.announcementsTXT.Location = new System.Drawing.Point(52, 57);
+            this.announcementsTXT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.announcementsTXT.MaximumSize = new System.Drawing.Size(1009, 604);
+            this.announcementsTXT.Multiline = true;
+            this.announcementsTXT.Name = "announcementsTXT";
+            this.announcementsTXT.ReadOnly = true;
+            this.announcementsTXT.Size = new System.Drawing.Size(1009, 587);
+            this.announcementsTXT.TabIndex = 5;
             // 
-            // AnnouncementsTXT
+            // menuStrip1
             // 
-            this.AnnouncementsTXT.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.AnnouncementsTXT.HideSelection = false;
-            this.AnnouncementsTXT.Location = new System.Drawing.Point(35, 36);
-            this.AnnouncementsTXT.Multiline = true;
-            this.AnnouncementsTXT.Name = "AnnouncementsTXT";
-            this.AnnouncementsTXT.ReadOnly = true;
-            this.AnnouncementsTXT.Size = new System.Drawing.Size(674, 311);
-            this.AnnouncementsTXT.TabIndex = 5;
-            this.AnnouncementsTXT.TextChanged += new System.EventHandler(this.AnnouncementsTXT_TextChanged);
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripMenuItem,
+            this.modifyToolStripMenuItem,
+            this.refreshToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1113, 35);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // homebtn
+            // createToolStripMenuItem
             // 
-            this.homebtn.Location = new System.Drawing.Point(287, 366);
-            this.homebtn.Name = "homebtn";
-            this.homebtn.Size = new System.Drawing.Size(127, 23);
-            this.homebtn.TabIndex = 7;
-            this.homebtn.Text = "Home";
-            this.homebtn.UseVisualStyleBackColor = true;
-            this.homebtn.Click += new System.EventHandler(this.homebtn_Click);
+            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
+            this.createToolStripMenuItem.Text = "Create";
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
-            // modifyAnnouncement
+            // modifyToolStripMenuItem
             // 
-            this.modifyAnnouncement.Location = new System.Drawing.Point(633, 401);
-            this.modifyAnnouncement.Name = "modifyAnnouncement";
-            this.modifyAnnouncement.Size = new System.Drawing.Size(83, 23);
-            this.modifyAnnouncement.TabIndex = 8;
-            this.modifyAnnouncement.Text = "Modify";
-            this.modifyAnnouncement.UseVisualStyleBackColor = true;
-            this.modifyAnnouncement.Click += new System.EventHandler(this.modifyAnnouncement_Click);
+            this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
+            this.modifyToolStripMenuItem.Text = "Modify";
+            this.modifyToolStripMenuItem.Click += new System.EventHandler(this.modifyToolStripMenuItem_Click);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(86, 29);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // AnnouncementsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.modifyAnnouncement);
-            this.Controls.Add(this.homebtn);
-            this.Controls.Add(this.createAnnBTN);
-            this.Controls.Add(this.AnnouncementsTXT);
+            this.ClientSize = new System.Drawing.Size(1113, 694);
+            this.Controls.Add(this.announcementsTXT);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1135, 750);
             this.Name = "AnnouncementsForm";
             this.Text = "Announcements";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button createAnnBTN;
-        private System.Windows.Forms.TextBox AnnouncementsTXT;
-        private System.Windows.Forms.Button homebtn;
-        private System.Windows.Forms.Button modifyAnnouncement;
+        private System.Windows.Forms.TextBox announcementsTXT;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }

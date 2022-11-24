@@ -31,7 +31,8 @@ namespace TeacherApp
             }
             notesComboBox.Enabled = false;
             NotesTxtBox.ReadOnly = true;
-            updateNoteBTN.Enabled = false;
+            modifyToolStripMenuItem.Enabled = false;
+            updateToolStripMenuItem.Enabled = false;
             
             CreateNotesForm.ShowDialog();
         }
@@ -40,6 +41,8 @@ namespace TeacherApp
         {
             try
             {
+                modifyToolStripMenuItem.Enabled = true;
+
                 string noteName = notesComboBox.SelectedItem.ToString();
                 string sqlStr = "SELECT * FROM Notes WHERE userID = '" + User.UserId + "' And noteName = '" + noteName + "' ";
                 int rowsReturned = 0;
@@ -65,19 +68,21 @@ namespace TeacherApp
             }
         }
 
-
-        private void ModifyNoteBTN_Click(object sender, EventArgs e)
+        private void modifyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             notesComboBox.Enabled = false;
-            updateNoteBTN.Enabled = true;
-            
+            updateToolStripMenuItem.Enabled = true;
+
             NotesTxtBox.ReadOnly = false;
         }
 
-        private void SaveNoteBTN_Click(object sender, EventArgs e)
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
+                modifyToolStripMenuItem.Enabled = false;
+                updateToolStripMenuItem.Enabled = false;
+
                 string noteTxtData = NotesTxtBox.Text.ToString();
 
                 string sqlstr = "UPDATE Notes SET " +
@@ -103,7 +108,6 @@ namespace TeacherApp
                 throw;
             }
         }
-       
         public void PopulateNotesComboBoxData() 
         {
             try
@@ -131,12 +135,14 @@ namespace TeacherApp
         private void viewBTN_Click(object sender, EventArgs e)
         {
             notesComboBox.Enabled = true;
-            updateNoteBTN.Enabled = false;
+            updateToolStripMenuItem.Enabled = false;
             NotesTxtBox.ReadOnly = true;
            
             notesComboBox.Items.Clear();
 
             PopulateNotesComboBoxData();
         }
+
+        
     }
 }

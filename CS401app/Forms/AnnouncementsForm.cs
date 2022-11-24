@@ -68,8 +68,8 @@ namespace TeacherApp
                         string date = dr["date"].ToString();
                         string announcementData = dr["announcementData"].ToString();
 
-                        announcementsTXT.AppendText(courseId + " - " + date + " - " + announcementData);
-                        announcementsTXT.AppendText(Environment.NewLine);
+                        announcementsTXT.AppendText("\n" + courseId + " - " + date + " - " + announcementData);
+                        
 
                         modifyToolStripMenuItem.Enabled = true;
                     }
@@ -101,11 +101,12 @@ namespace TeacherApp
                         string date = dr["date"].ToString();
                         string announcementData = dr["announcementData"].ToString();
 
-                        announcementsTXT.AppendText(courseId + " - " + date + " - " + announcementData);
+                        announcementsTXT.AppendText(courseId +  " - " + date + " - " + announcementData);
                         announcementsTXT.AppendText(Environment.NewLine);
-
-                        modifyToolStripMenuItem.Enabled = true;
+                        
+                       
                     }
+                    modifyToolStripMenuItem.Enabled = true;
                 }
             }
             catch (Exception)

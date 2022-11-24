@@ -3,84 +3,138 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TeacherApp.Forms;
 
 namespace TeacherApp
 
 {
     public partial class ModifyAnnouncements : Form
     {
-        //variables
+  
         public DatabaseMgrSQLite dbMgr;
         public DataTable dataTable = new DataTable();
-        //public int userId = 0;
+        
         
         public ModifyAnnouncements()
         {
             InitializeComponent();
             
-            //create new database
             dbMgr = new DatabaseMgrSQLite();
 
-            //populateTextBoxes();
+            PopulateSubjectComboBox();  
         }
 
-        /*private void populateTextBoxes()
+        private void submitAnnouncementBtn_Click(object sender, EventArgs e)
         {
-
             try
             {
-                //SQLite statement
-                string sqlStr = "SELECT * From AnnouncementsTable WHERE userID = '" + User.UserId + "' ";
+                int id = GetSelectedCourseID();
+                string announcementData = AnnouncementTXT.Text;
+                string sqlstr = "UPDATE AnnouncementTable SET " +
+                    "announcementData = '" + announcementData + "' " +
+                    "WHERE announcementId = '" + id + "' ";
+
+                int numRowsUpdated = 0;
+                numRowsUpdated = dbMgr.putData(sqlstr);
+
+                if (numRowsUpdated == 1)
+                {
+                    selectSubjectComboBox.Text = string.Empty;
+                    AnnouncementTXT.Text = string.Empty;
+                    
+                    MessageBox.Show("Announcement updated", "Modify Announcement Status");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Announcement NOT updated", "Modify Announcement Status");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+    
+
+        private void selectSubjectComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AnnouncementTXT.Enabled = true;
+            PopulateEditText();
+        }
+        private void PopulateSubjectComboBox() 
+        {
+            try
+            {      
+                selectSubjectComboBox.Items.Clear();
+
+                string sqlStr = "SELECT * FROM AnnouncementTable WHERE userId = '" + User.UserId + "' ";
                 int rowsReturned = 0;
-                //Admin data table calling get function from dataBaseMGR
+
+                dataTable.Clear();
+                dataTable = dbMgr.getData(sqlStr, out rowsReturned);
+
+                if (rowsReturned > 0)
+                {
+                    foreach (DataRow dr in dataTable.Rows)
+                    {
+                        int id = Convert.ToInt32(dr["announcementId"]);
+                        string subject = dr["subject"].ToString();
+                        
+                        selectSubjectComboBox.Items.Add(id + " " + subject);
+                        Announcements.AnnouncementIdList.Add(id);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void PopulateEditText() 
+        {
+            try
+            {
+                AnnouncementTXT.Clear();
+
+                int id = GetSelectedCourseID();
+
+                string sqlStr = "Select * FROM AnnouncementTable WHERE announcementId = '" + id + "';";
+                int rowsReturned = 0;
+
                 dataTable.Clear();
                 dataTable = dbMgr.getData(sqlStr, out rowsReturned);
                 if (rowsReturned > 0)
                 {
                     foreach (DataRow dr in dataTable.Rows) // looping though rows
                     {
-                        announcements.Text = dr["userName"].ToString();
-                        passwordTXT.Text = dr["userPassword"].ToString();
-                        firstNameTXT.Text = dr["firstName"].ToString();
-                        lastNameTXT.Text = dr["lastName"].ToString();
-                        addressTXT.Text = dr["address"].ToString();
-                        cityTXT.Text = dr["city"].ToString();
-                        stateTXT.Text = dr["state"].ToString();
-                        zipTXT.Text = dr["zip"].ToString();
-                        emailTXT.Text = dr["alternateEmail"].ToString();
-                        schoolEmailTXT.Text = dr["schoolEmail"].ToString();
-                        phoneTXT.Text = dr["phone"].ToString();
+                        string data = dr["announcementData"].ToString();
 
+                        AnnouncementTXT.AppendText(data);
+                        AnnouncementTXT.AppendText(Environment.NewLine);
                     }
                 }
-            }*/
-
-        /*
-        private void clearStudentDataFields()
-        {
-            //clear data panel and update button
-            userId = 0;
-            nameTXT.Text = "";
-            majorTXT.Text = "";
-            gpaTXT.Text = "";
-
-
-        }
-        */
-
-        private void ModifyAnnouncements_Load(object sender, EventArgs e)
-        {
-            //updateModifyList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        private void submitAnnouncementBtn_Click(object sender, EventArgs e)
+        private int GetSelectedCourseID()
         {
+            int indexOfSelectComboBox = selectSubjectComboBox.SelectedIndex;
+            int announccemnetId = Announcements.AnnouncementIdList[indexOfSelectComboBox];
 
+            return announccemnetId;
         }
 
+        
     }
 }

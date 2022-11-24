@@ -30,11 +30,11 @@ namespace TeacherApp
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.AnnouncementsList = new System.Windows.Forms.ComboBox();
-            this.submitAnnouncementBtn = new System.Windows.Forms.Button();
-            this.AnnouncementTxtBox = new System.Windows.Forms.TextBox();
-            this.announcementLBL = new System.Windows.Forms.Label();
-            this.selectLBL = new System.Windows.Forms.Label();
+            this.selectSubjectComboBox = new System.Windows.Forms.ComboBox();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.AnnouncementTXT = new System.Windows.Forms.TextBox();
+            this.selectSubjectLBL = new System.Windows.Forms.Label();
+            this.editLBL = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -44,67 +44,75 @@ namespace TeacherApp
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 12;
             // 
-            // AnnouncementsList
+            // selectSubjectComboBox
             // 
-            this.AnnouncementsList.FormattingEnabled = true;
-            this.AnnouncementsList.Location = new System.Drawing.Point(231, 52);
-            this.AnnouncementsList.Name = "AnnouncementsList";
-            this.AnnouncementsList.Size = new System.Drawing.Size(212, 21);
-            this.AnnouncementsList.TabIndex = 10;
+            this.selectSubjectComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectSubjectComboBox.FormattingEnabled = true;
+            this.selectSubjectComboBox.Location = new System.Drawing.Point(231, 55);
+            this.selectSubjectComboBox.Name = "selectSubjectComboBox";
+            this.selectSubjectComboBox.Size = new System.Drawing.Size(212, 21);
+            this.selectSubjectComboBox.TabIndex = 10;
+            this.selectSubjectComboBox.SelectedIndexChanged += new System.EventHandler(this.selectSubjectComboBox_SelectedIndexChanged);
             // 
-            // submitAnnouncementBtn
+            // updateBtn
             // 
-            this.submitAnnouncementBtn.Location = new System.Drawing.Point(342, 332);
-            this.submitAnnouncementBtn.Name = "submitAnnouncementBtn";
-            this.submitAnnouncementBtn.Size = new System.Drawing.Size(75, 23);
-            this.submitAnnouncementBtn.TabIndex = 7;
-            this.submitAnnouncementBtn.Text = "Submit";
-            this.submitAnnouncementBtn.UseVisualStyleBackColor = true;
-            this.submitAnnouncementBtn.Click += new System.EventHandler(this.submitAnnouncementBtn_Click);
+            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.Location = new System.Drawing.Point(303, 305);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(75, 26);
+            this.updateBtn.TabIndex = 7;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.submitAnnouncementBtn_Click);
             // 
-            // AnnouncementTxtBox
+            // AnnouncementTXT
             // 
-            this.AnnouncementTxtBox.Location = new System.Drawing.Point(123, 107);
-            this.AnnouncementTxtBox.Multiline = true;
-            this.AnnouncementTxtBox.Name = "AnnouncementTxtBox";
-            this.AnnouncementTxtBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.AnnouncementTxtBox.Size = new System.Drawing.Size(454, 179);
-            this.AnnouncementTxtBox.TabIndex = 6;
+            this.AnnouncementTXT.Enabled = false;
+            this.AnnouncementTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AnnouncementTXT.Location = new System.Drawing.Point(130, 106);
+            this.AnnouncementTXT.Multiline = true;
+            this.AnnouncementTXT.Name = "AnnouncementTXT";
+            this.AnnouncementTXT.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.AnnouncementTXT.Size = new System.Drawing.Size(454, 179);
+            this.AnnouncementTXT.TabIndex = 6;
             // 
-            // announcementLBL
+            // selectSubjectLBL
             // 
-            this.announcementLBL.AutoSize = true;
-            this.announcementLBL.Location = new System.Drawing.Point(32, 110);
-            this.announcementLBL.Name = "announcementLBL";
-            this.announcementLBL.Size = new System.Drawing.Size(85, 13);
-            this.announcementLBL.TabIndex = 5;
-            this.announcementLBL.Text = "Announcement: ";
+            this.selectSubjectLBL.AutoSize = true;
+            this.selectSubjectLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectSubjectLBL.Location = new System.Drawing.Point(181, 57);
+            this.selectSubjectLBL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.selectSubjectLBL.Name = "selectSubjectLBL";
+            this.selectSubjectLBL.Size = new System.Drawing.Size(46, 13);
+            this.selectSubjectLBL.TabIndex = 13;
+            this.selectSubjectLBL.Text = "Subject:";
             // 
-            // selectLBL
+            // editLBL
             // 
-            this.selectLBL.AutoSize = true;
-            this.selectLBL.Location = new System.Drawing.Point(182, 52);
-            this.selectLBL.Name = "selectLBL";
-            this.selectLBL.Size = new System.Drawing.Size(43, 13);
-            this.selectLBL.TabIndex = 13;
-            this.selectLBL.Text = "Select: ";
+            this.editLBL.AutoSize = true;
+            this.editLBL.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editLBL.Location = new System.Drawing.Point(98, 106);
+            this.editLBL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.editLBL.Name = "editLBL";
+            this.editLBL.Size = new System.Drawing.Size(28, 13);
+            this.editLBL.TabIndex = 14;
+            this.editLBL.Text = "Edit:";
             // 
             // ModifyAnnouncements
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 334);
-            this.Controls.Add(this.submitAnnouncementBtn);
-            this.Controls.Add(this.selectLBL);
-            this.Controls.Add(this.AnnouncementTxtBox);
-            this.Controls.Add(this.announcementLBL);
-            this.Controls.Add(this.AnnouncementsList);
+            this.ClientSize = new System.Drawing.Size(686, 354);
+            this.Controls.Add(this.editLBL);
+            this.Controls.Add(this.selectSubjectLBL);
+            this.Controls.Add(this.updateBtn);
+            this.Controls.Add(this.AnnouncementTXT);
+            this.Controls.Add(this.selectSubjectComboBox);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(704, 373);
-            this.MinimumSize = new System.Drawing.Size(704, 373);
+            this.MaximumSize = new System.Drawing.Size(702, 404);
+            this.MinimumSize = new System.Drawing.Size(702, 367);
             this.Name = "ModifyAnnouncements";
-            this.Text = "ModifyAnnouncements";
-            this.Load += new System.EventHandler(this.ModifyAnnouncements_Load);
+            this.Text = "Modify Announcements";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,10 +121,10 @@ namespace TeacherApp
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox AnnouncementsList;
-        private System.Windows.Forms.Button submitAnnouncementBtn;
-        private System.Windows.Forms.TextBox AnnouncementTxtBox;
-        private System.Windows.Forms.Label announcementLBL;
-        private System.Windows.Forms.Label selectLBL;
+        private System.Windows.Forms.ComboBox selectSubjectComboBox;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.TextBox AnnouncementTXT;
+        private System.Windows.Forms.Label selectSubjectLBL;
+        private System.Windows.Forms.Label editLBL;
     }
 }

@@ -31,7 +31,9 @@ namespace TeacherApp
         {
             try
             {
-                int courseId = Convert.ToInt32(selectComboBox.SelectedItem);
+
+
+                int courseId = GetSelectedCourseID();
                 string subject = subjectTXT.Text;
                 string date = dateTimePicker.Text;
                 string announcement = announcementTXT.Text; 
@@ -61,7 +63,6 @@ namespace TeacherApp
         {
             try
             {
-                selectComboBox.Items.Clear();
                 string sqlStr = "SELECT * FROM CourseTable WHERE teacherId = '" + User.UserId + "' ";
                 int rowsReturned = 0;
 
@@ -72,7 +73,8 @@ namespace TeacherApp
                     foreach (DataRow dr in rosterDataTable.Rows)
                     {
                         int courseIds = Convert.ToInt32(dr["courseID"]);                
-              
+                        
+                        Announcements.CourseIdList.Add(courseIds);
                         selectComboBox.Items.Add(courseIds);
                     }
                 }
@@ -85,9 +87,18 @@ namespace TeacherApp
 
         private void ClearTexts()
         {
-            selectComboBox.Items.Clear();
             subjectTXT.Clear();
             announcementTXT.Clear();
+            selectComboBox.Text = string.Empty;
+
+        }
+
+        private int GetSelectedCourseID()
+        {
+            int indexOfSelectComboBox = selectComboBox.SelectedIndex;
+            int courseId = Announcements.CourseIdList[indexOfSelectComboBox];
+
+            return courseId;
         }
     }
 }

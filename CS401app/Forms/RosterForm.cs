@@ -16,7 +16,7 @@ namespace TeacherApp
 {
     public partial class RosterForm : Form
     {
-        CreateRoster createRoster;
+        CreateClass createRoster;
        
         public DatabaseMgrSQLite dataBaseMgr;
         private DataTable rosterDataTable = new DataTable();
@@ -58,7 +58,7 @@ namespace TeacherApp
         {
             if(null == createRoster || createRoster.IsDisposed)
             {
-                createRoster = new CreateRoster();
+                createRoster = new CreateClass();
             }
 
             refreshBTN.Enabled = true;

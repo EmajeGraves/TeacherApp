@@ -70,8 +70,6 @@ namespace TeacherApp
 
                         announcementsTXT.AppendText("\n" + courseId + " - " + date + " - " + announcementData);
                         
-
-                        modifyToolStripMenuItem.Enabled = true;
                     }
                 }
             }
@@ -101,12 +99,9 @@ namespace TeacherApp
                         string date = dr["date"].ToString();
                         string announcementData = dr["announcementData"].ToString();
 
-                        announcementsTXT.AppendText(courseId +  " - " + date + " - " + announcementData);
-                        announcementsTXT.AppendText(Environment.NewLine);
-                        
-                       
+                        announcementsTXT.AppendText(courseId +  " - " + date + " - " + announcementData + "\n");      
                     }
-                    modifyToolStripMenuItem.Enabled = true;
+                    
                 }
             }
             catch (Exception)
@@ -120,17 +115,17 @@ namespace TeacherApp
             if (User.UserRole == "Teacher" || User.UserRole == "Admin")
             {
                 PopulateTeachersAnnouncements();
+        
             }
-            else
+            else if (User.UserRole == "Student")
             {
+     
+                createToolStripMenuItem.Visible = false;
+                modifyToolStripMenuItem.Visible = false;
+                refreshToolStripMenuItem.Visible = false;   
+                menuStrip1.Visible = false;
                 PopulateStudentAnnouncements();
-                StudentScreen();
             }
-        }
-
-        private void StudentScreen()
-        {
-            menuStrip1.Visible = false;
         }
     }
 }

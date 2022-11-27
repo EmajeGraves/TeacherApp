@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace TeacherApp
 {
-    public partial class CreateRoster : Form
+    public partial class CreateClass : Form
     {
         public DatabaseMgrSQLite dataBaseMgr;
-        public CreateRoster()
+        public CreateClass()
         {
             InitializeComponent();
             dataBaseMgr = new DatabaseMgrSQLite();
@@ -23,15 +23,18 @@ namespace TeacherApp
         {
             try
             {       
-                string rosterName = nameTXT.Text;            
-                string sqlStr = "INSERT INTO CourseTable(teacherId, courseName) VALUES ('" + User.UserId + "','" + rosterName + "')";
+                string courseName = nameTXT.Text; 
+                string title = titleTXT.Text;
+                string credits = creditsComboBox1.SelectedItem.ToString();
+                string term = termTXT.Text; 
+                string sqlStr = "INSERT INTO CourseTable(teacherId, courseName, title, credits, term ) VALUES ('" + User.UserId + "','" + courseName + "','" + title + "','" + credits + "','" + term + "')";
 
                 int rowsInserted = 0;
                 rowsInserted = dataBaseMgr.putData(sqlStr);
 
                 if (rowsInserted == 1)
                 {
-                    MessageBox.Show(rosterName + " CREATED");
+                    MessageBox.Show(courseName + " CREATED");
                     Close();
                 }
             }
@@ -39,6 +42,11 @@ namespace TeacherApp
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void titleLBL_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

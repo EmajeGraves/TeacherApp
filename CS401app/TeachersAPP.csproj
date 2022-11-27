@@ -78,6 +78,18 @@
     <Compile Include="Forms\AnnouncementsForm.Designer.cs">
       <DependentUpon>AnnouncementsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ClassLookUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClassLookUp.Designer.cs">
+      <DependentUpon>ClassLookUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClassSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClassSchedule.Designer.cs">
+      <DependentUpon>ClassSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,11 +110,11 @@
     <Compile Include="Forms\CreateNotesForm.Designer.cs">
       <DependentUpon>CreateNotesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CreateRoster.cs">
+    <Compile Include="Forms\CreateClass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CreateRoster.Designer.cs">
-      <DependentUpon>CreateRoster.cs</DependentUpon>
+    <Compile Include="Forms\CreateClass.Designer.cs">
+      <DependentUpon>CreateClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NotesForm.cs">
       <SubType>Form</SubType>
@@ -151,14 +163,20 @@
     <EmbeddedResource Include="Forms\AnnouncementsForm.resx">
       <DependentUpon>AnnouncementsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClassLookUp.resx">
+      <DependentUpon>ClassLookUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClassSchedule.resx">
+      <DependentUpon>ClassSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateAccountForm.resx">
       <DependentUpon>CreateAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateNotesForm.resx">
       <DependentUpon>CreateNotesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CreateRoster.resx">
-      <DependentUpon>CreateRoster.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\CreateClass.resx">
+      <DependentUpon>CreateClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\createAnnouncements.resx">
       <DependentUpon>createAnnouncements.cs</DependentUpon>

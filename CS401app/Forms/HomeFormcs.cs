@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TeacherApp.Forms;
 
 namespace TeacherApp
 {
@@ -15,13 +16,15 @@ namespace TeacherApp
 
 
         AnnouncementsForm announcementsForm;
+        ClassLookUp classLookUp;
+        ClassSchedule classSchedule;
         ModifyAccountForm modifyAccountForm;
         NotesForm notesForm;
         RosterForm rosterForm;
 
         public HomeForm()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
         
 
@@ -31,7 +34,7 @@ namespace TeacherApp
             {
                 announcementsForm = new AnnouncementsForm();
             }
-
+        
             announcementsForm.ShowDialog();
         }
 
@@ -46,12 +49,20 @@ namespace TeacherApp
 
         private void scheduleBTN_Click(object sender, EventArgs e)
         {
-
+            if ((null == classSchedule || classSchedule.IsDisposed))
+            {
+                classSchedule = new ClassSchedule();
+            }
+            classSchedule.ShowDialog();
         }
 
         private void hoursBTN_Click(object sender, EventArgs e)
         {
-
+            if (null == classLookUp || classLookUp.IsDisposed)
+            {
+                classLookUp = new ClassLookUp();
+            }
+            classLookUp.ShowDialog();
         }
 
         private void modifyAccountBTN_Click(object sender, EventArgs e)
@@ -72,7 +83,5 @@ namespace TeacherApp
             }
             rosterForm.ShowDialog();
         }
-
-        
     }
 }

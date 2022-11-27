@@ -113,10 +113,10 @@
             this.createLinkLabel.Location = new System.Drawing.Point(352, 10);
             this.createLinkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.createLinkLabel.Name = "createLinkLabel";
-            this.createLinkLabel.Size = new System.Drawing.Size(63, 13);
+            this.createLinkLabel.Size = new System.Drawing.Size(91, 13);
             this.createLinkLabel.TabIndex = 15;
             this.createLinkLabel.TabStop = true;
-            this.createLinkLabel.Text = "Create New";
+            this.createLinkLabel.Text = "Create New Class";
             this.createLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createLinkLabel_LinkClicked);
             // 
             // modifyPNL

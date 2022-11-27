@@ -49,6 +49,7 @@ namespace TeacherApp
             dataTable = dbMgr.getData(sqlStr, out rowsReturned);
 
             //if rowsReturned == 1, then we found the user
+           
             if (rowsReturned == 1)
             {
                 foreach (DataRow dr in dataTable.Rows) // looping though rows

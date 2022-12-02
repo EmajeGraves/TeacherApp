@@ -14,13 +14,14 @@ namespace TeacherApp
     public partial class HomeForm : Form
     {
 
-
         AnnouncementsForm announcementsForm;
         ClassLookUp classLookUp;
         ClassSchedule classSchedule;
         ModifyAccountForm modifyAccountForm;
         NotesForm notesForm;
         RosterForm rosterForm;
+        Calendar calendar;
+
 
         public HomeForm()
         {
@@ -82,6 +83,15 @@ namespace TeacherApp
                 rosterForm = new RosterForm();
             }
             rosterForm.ShowDialog();
+        }
+
+        private void calendarBTN_Click(object sender, EventArgs e)
+        {
+            if ((null == calendar || calendar.IsDisposed))
+            {
+                calendar = new Calendar();
+            }
+            calendar.ShowDialog();
         }
     }
 }
